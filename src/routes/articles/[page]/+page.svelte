@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import ArticleCard from "$components/ArticleCard.svelte";
+	import Article from "$components/Article.svelte";
 	import MaterialIcon from '$components/MaterialIcon.svelte';
 
 	export let data;
@@ -16,7 +16,7 @@
 	<div>
 		{#each currentArticles as article}
 		<div class="py-4">
-			<ArticleCard data={article} />
+			<Article data={article} />
 		</div>
 		{/each}
 
