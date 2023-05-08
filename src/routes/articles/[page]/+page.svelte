@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Article from "$components/Article.svelte";
+	import ConditionalLink from '$components/ConditionalLink.svelte';
 	import MaterialIcon from '$components/MaterialIcon.svelte';
 
 	export let data;
@@ -22,14 +23,17 @@
 
 		<nav class="flex justify-between pt-4">
 			<span
-				class="flex items-center {currentPage === 1 ? 'opacity-50 cursor-default' : 'hover:text-level-up-orange'}"
+				class="{currentPage === 1 ? 'opacity-50 cursor-default' : 'hover:text-level-up-orange'}"
 			>
-				<MaterialIcon kind="chevronRight" orientation="s" />
-				{#if currentPage > 1}
-					<a href="/articles/{currentPage > 0 ? currentPage - 1 : totalPages}">Previous</a>
-				{:else}
-					<p>Previous</p>
-				{/if}
+				<ConditionalLink
+					href="/articles/{currentPage > 0 ? currentPage - 1 : totalPages}"
+					condition={currentPage > 1}
+				>
+					<span class="flex items-center">
+						<MaterialIcon kind="chevronRight" orientation="s" />
+						Previous
+					</span>
+				</ConditionalLink>
 			</span>
 
 			<div class="flex items-center gap-3">
@@ -37,21 +41,24 @@
 					<a
 						href="/articles/{idx + 1}"
 						class="hover:text-level-up-yellow {currentPage - 1 === idx ? 'text-level-up-orange' : ''}"
-						>
+					>
 						{idx + 1}
 					</a>
 				{/each}
 			</div>
 
 			<span
-				class="flex items-center {currentPage === totalPages ? 'opacity-50 cursor-default' : 'hover:text-level-up-orange'}"
+				class="{currentPage === totalPages ? 'opacity-50 cursor-default' : 'hover:text-level-up-orange'}"
 			>
-				{#if currentPage < totalPages}
-				<a href="/articles/{currentPage < totalPages ? (currentPage + 1) : totalPages}">Next</a>
-				{:else}
-				<p>Next</p>
-				{/if}
-				<MaterialIcon kind="chevronRight" orientation="n" />
+				<ConditionalLink
+					href="/articles/{currentPage < totalPages ? (currentPage + 1) : totalPages}"
+					condition={currentPage < totalPages}
+				>
+					<span class="flex items-center">
+						Next
+						<MaterialIcon kind="chevronRight" orientation="n" />
+					</span>
+				</ConditionalLink>
 			</span>
 		</nav>
 	</div>

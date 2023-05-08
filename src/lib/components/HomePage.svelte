@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "../../app.css";
+    import "$src/app.css";
 </script>
 
 <div class="border-level-up-orange border-4 rounded-lg p-8">
