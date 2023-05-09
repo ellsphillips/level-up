@@ -5,3 +5,8 @@ interface Article {
 	description: string;
 	tags: string[];
 }
+
+interface Tag {
+    name: string;
+    count: number;
+}
