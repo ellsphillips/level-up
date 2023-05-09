@@ -12,6 +12,7 @@ export default {
 			colors: {
 				"level-up-yellow": "#ffd866",
 				"level-up-orange": "#fc9867",
+				"level-up-background": "#1C1B21",
 				// Greyscale
 				"level-up-black": "#222222",
 				"level-up-grey-100": "#171717",
