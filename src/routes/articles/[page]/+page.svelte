@@ -29,16 +29,24 @@
 	<div class="w-1/2 pb-8 space-y-3">
 		<h1 class="text-6xl font-bold">Articles</h1>
 		
-		<input
-			type="search"
-			placeholder="Search articles..."
-			bind:value={$searchStore.search}
-			class="
-				block w-full px-4 py-2
-				border border-gray-200 bg-level-up-grey-85
-				focus:border-level-up-orange focus:ring-level-up-orange
-			"	
-		/>
+		<div class="relative">
+			<input
+				type="search"
+				placeholder="Search articles..."
+				bind:value={$searchStore.search}
+				class="
+					block w-full px-4 py-2
+					border border-gray-200 bg-level-up-grey-85
+					focus:border-level-up-orange focus:ring-level-up-orange
+				"	
+			/>
+			<a href="/tags" class="absolute right-12 top-3.5 text-level-up-grey-15 hover:text-level-up-orange">
+				<MaterialIcon kind="tag" />
+			</a>
+			<span class="absolute scale-150 right-3.5 top-3.5 text-level-up-grey-15">
+				<MaterialIcon kind="search" />
+			</span>
+		</div>
 	</div>
 
 	{#if $searchStore.filtered.length === 0}

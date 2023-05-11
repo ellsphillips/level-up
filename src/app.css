@@ -8,5 +8,5 @@ body {
 }
 
 body {
-	@apply bg-level-up-grey-100 text-slate-50;
+	@apply bg-level-up-background text-slate-50;
 }
