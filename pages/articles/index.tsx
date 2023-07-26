@@ -1,9 +1,10 @@
 import { GetStaticProps } from "next";
+import Link from "next/link";
 
+import Card from "@/components/article/Card";
 import { articleData } from "@/data/articles";
 import Layout from "@/layouts/App";
 import { Article } from "@/types/article";
-import Link from "next/link";
 
 type Props = {
   items: Article[];
@@ -11,16 +12,14 @@ type Props = {
 
 const WithStaticProps = ({ items }: Props) => (
   <Layout title="LEVEL-UP! - Articles">
-    <h1>Articles</h1>
-    <ul>
-      {items.map((item) => (
-        <li key={item.id}>
-          <Link href="/articles/[id]" as={`/articles/${item.id}`}>
-            {item.id}: {item.title}
-          </Link>
-        </li>
+    <h1 className="pb-8 text-5xl font-bold">Articles</h1>
+    <div className="space-y-8">
+      {items.map((data) => (
+        <Link href="/articles/[id]" as={`/articles/${data.id}`}>
+          <Card {...data} />
+        </Link>
       ))}
-    </ul>
+    </div>
   </Layout>
 );
 
