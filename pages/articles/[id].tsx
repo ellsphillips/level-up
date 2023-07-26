@@ -24,7 +24,7 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
   return (
     <Layout
       title={`${
-        item ? item.name : "Article Detail"
+        item ? item.title : "Article Detail"
       } | Next.js + TypeScript Example`}
     >
       {item && <ListDetail item={item} />}

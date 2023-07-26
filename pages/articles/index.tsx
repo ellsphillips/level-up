@@ -16,7 +16,7 @@ const WithStaticProps = ({ items }: Props) => (
       {items.map((item) => (
         <li key={item.id}>
           <Link href="/articles/[id]" as={`/articles/${item.id}`}>
-            {item.id}:{item.name}
+            {item.id}: {item.title}
           </Link>
         </li>
       ))}
