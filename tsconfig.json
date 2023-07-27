@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-<<<<<<< HEAD
     "target": "esnext",
-=======
-    "target": "es5",
->>>>>>> 09feaf9fa7a2d26a60b082e43e7e9bbddd922b1d
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,7 +12,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-<<<<<<< HEAD
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
@@ -28,9 +23,6 @@
       "@/types/*": ["types/*"],
       "@/utils/*": ["utils/*"]
     }
-=======
-    "jsx": "preserve"
->>>>>>> 09feaf9fa7a2d26a60b082e43e7e9bbddd922b1d
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

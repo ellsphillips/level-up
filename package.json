@@ -15,11 +15,8 @@
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
-<<<<<<< HEAD
     "postcss-preset-env": "^9.1.0",
     "tailwindcss": "^3.3.3",
-=======
->>>>>>> 09feaf9fa7a2d26a60b082e43e7e9bbddd922b1d
     "typescript": "^4.8.3"
   }
 }
