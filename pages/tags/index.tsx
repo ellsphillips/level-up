@@ -2,7 +2,7 @@ import Layout from "@/layouts/App";
 import { Tag } from "@/types/article";
 import Link from "next/link";
 
-import { getTagData } from "./load";
+import { getTagData } from "@/utils/tags";
 
 export default function Tags() {
   const tags: Tag[] = getTagData();

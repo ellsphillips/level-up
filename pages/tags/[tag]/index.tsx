@@ -1,5 +1,5 @@
 import { Tag } from "@/types/article";
-import { getUniqueTags } from "../load";
+import { getUniqueTags } from "@/utils/tags";
 
 export default function TagPage() {
   const tags = getUniqueTags();
