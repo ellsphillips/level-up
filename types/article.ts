@@ -11,3 +11,8 @@ export type Article = {
   series?: Series;
   tags: string[];
 };
+
+export interface Tag {
+  name: string;
+  count: number;
+}
