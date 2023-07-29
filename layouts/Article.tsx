@@ -19,7 +19,7 @@ const Layout = ({ children, title = 'LEVEL-UP!' }: Props) => (
             />
         </Head>
         <div className='absolute w-full h-96 -z-10 bg-cyan-950/25'></div>
-        <div className='max-w-5xl p-8 mx-auto'>
+        <div className='p-8 mx-auto max-w-7xl'>
             <Nav />
             {children}
             <Footer />

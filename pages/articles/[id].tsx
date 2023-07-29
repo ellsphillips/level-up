@@ -38,7 +38,7 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
         <Layout title={item ? item.title : 'Article Detail'}>
             <div className='py-16'>{item && <ListDetail item={item} />}</div>
 
-            <div className='flex min-h-full min-w-0 flex-col items-center justify-center shadow-xl mt-4 overflow-hidden rounded-lg bg-gray-800 ring-1 ring-inset ring-white/5 lg:aspect-[2/1]'></div>
+            <div className='flex min-h-full min-w-0 flex-col items-center justify-center shadow-xl mt-4 overflow-hidden rounded-lg bg-gray-800 ring-1 ring-inset ring-white/5 aspect-[2/1]'></div>
 
             <div className='flex gap-8 pt-16'>
                 <aside className='w-1/3'>
@@ -46,41 +46,35 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
                         {item?.series}
                     </a>
                     <p className='mt-1 text-sm text-gray-500 sm:text-base'>
-                        {articlesInSeries.length} lessons · 52 minute read
+                        {articlesInSeries.length} lessons · 24 minute read
                     </p>
                     <div className='mt-4 space-y-1'>
-                        {articleData
-                            .filter(
-                                article =>
-                                    article.series ===
-                                    Series.ProductionReadyPython,
-                            )
-                            .map((article, i) => {
-                                return (
-                                    <Link
-                                        href='/articles/[id]'
-                                        as={`/articles/${article.id}`}
-                                        className='flex items-center justify-between'
+                        {articlesInSeries.map((article, i) => {
+                            return (
+                                <Link
+                                    href='/articles/[id]'
+                                    as={`/articles/${article.id}`}
+                                    className='flex items-center justify-between'
+                                >
+                                    <div
+                                        className={`flex items-center w-full px-4 py-2 text-sm rounded hover:bg-slate-900 hover:cursor-pointer ${
+                                            item.id === article.id &&
+                                            'bg-slate-800'
+                                        }`}
                                     >
-                                        <div
-                                            className={`flex items-center w-full p-2 text-sm rounded hover:bg-slate-900 hover:cursor-pointer ${
-                                                item.id === article.id &&
-                                                'bg-slate-800'
-                                            }`}
-                                        >
-                                            <span className='text-gray-500'>
-                                                {i + 1}
-                                            </span>
-                                            <p className='flex-1 ml-4 text-white truncate'>
-                                                {article.title}
-                                            </p>
-                                            <span className='ml-2 text-gray-500'>
-                                                8 mins
-                                            </span>
-                                        </div>
-                                    </Link>
-                                );
-                            })}
+                                        <span className='text-gray-500'>
+                                            {i + 1}
+                                        </span>
+                                        <p className='flex-1 ml-4 text-white truncate'>
+                                            {article.title}
+                                        </p>
+                                        <span className='ml-2 text-gray-500'>
+                                            8 mins
+                                        </span>
+                                    </div>
+                                </Link>
+                            );
+                        })}
                     </div>
                 </aside>
                 <article className='flex-1'>{lipsum}</article>
