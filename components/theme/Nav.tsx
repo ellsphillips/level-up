@@ -7,10 +7,10 @@ const Nav = () => {
             <Link as='/' href='/'>
                 <Logo />
             </Link>
-            <nav className='flex justify-end space-x-4'>
-                <Link href='/'>Home</Link>
+            <nav className='flex justify-end space-x-8'>
                 <Link href='/about'>About</Link>
                 <Link href='/articles'>Articles</Link>
+                <Link href='/pathways'>Pathways</Link>
             </nav>
         </header>
     );
