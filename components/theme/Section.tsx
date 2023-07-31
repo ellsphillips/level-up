@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     cta?: boolean;
     fade?: boolean;
 }
@@ -39,7 +39,7 @@ export default function Section(props: SectionProps) {
                 </>
             )}
             <div
-                className={`relative max-w-6xl px-8 mx-auto my-8 sm:px-6 lg:px-8 md:mt-8 lg:my-8 ${props.className}`}
+                className={`relative max-w-6xl px-8 mx-auto my-8 sm:px-6 ${props.className}`}
             >
                 {props.children}
             </div>
