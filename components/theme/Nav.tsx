@@ -3,14 +3,13 @@ import Logo from '../Logo';
 
 const Nav = () => {
     return (
-        <header className='flex items-center justify-between pb-8'>
+        <header className='flex-col items-center justify-between pb-8 space-y-4 sm:flex sm:flex-row sm:space-y-0'>
             <Link as='/' href='/'>
                 <Logo />
             </Link>
-            <nav className='flex justify-end space-x-4'>
-                <Link href='/'>Home</Link>
-                <Link href='/about'>About</Link>
+            <nav className='flex space-x-8 sm:justify-end'>
                 <Link href='/articles'>Articles</Link>
+                <Link href='/pathways'>Pathways</Link>
             </nav>
         </header>
     );
