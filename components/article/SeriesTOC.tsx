@@ -1,3 +1,4 @@
+import slugify from '@/lib/utils/slugify';
 import { Article } from '@/types/article';
 import Link from 'next/link';
 
@@ -19,14 +20,15 @@ export default function SeriesTOC(props: SeriesTOCProps) {
                 {props.series.map((article, i) => {
                     return (
                         <Link
-                            href='/articles/[id]'
-                            as={`/articles/${article.id}`}
+                            href='/articles/[slug]'
+                            as={`/articles/${slugify(article.title)}`}
                             className='flex items-center justify-between'
                         >
                             <div
-                                className={`flex items-center w-full px-4 py-2 text-sm rounded hover:bg-slate-900 hover:cursor-pointer ${
-                                    props.series[0].id === article.id &&
-                                    'bg-slate-800'
+                                className={`flex items-center w-full px-4 py-2 text-sm rounded hover:bg-slate-800 hover:cursor-pointer ${
+                                    location.pathname ===
+                                        `/articles/${slugify(article.title)}` &&
+                                    'bg-slate-900'
                                 }`}
                             >
                                 <span className='text-gray-500'>{i + 1}</span>

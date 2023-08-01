@@ -2,9 +2,11 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 import ListDetail from '@/components/article/Details';
 import SeriesTOC from '@/components/article/SeriesTOC';
+import Counter from '@/components/demo/Counter';
 import { articleData } from '@/data/articles';
 import lipsum from '@/data/lipsum';
 import Layout from '@/layouts/Article';
+import slugify from '@/lib/utils/slugify';
 import { Article, Series } from '@/types/article';
 import { useEffect, useState } from 'react';
 
@@ -38,7 +40,9 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
         <Layout title={item ? item.title : 'Article Detail'}>
             <div className='py-12'>{item && <ListDetail item={item} />}</div>
 
-            <div className='flex min-h-full min-w-0 flex-col items-center justify-center shadow-xl mt-4 overflow-hidden rounded-lg bg-gray-800 ring-1 ring-inset ring-white/5 aspect-[2/1]'></div>
+            <div className='flex min-h-full min-w-0 flex-col items-center justify-center shadow-xl mt-4 overflow-hidden rounded-lg bg-gray-800 ring-1 ring-inset ring-white/5 aspect-[2/1]'>
+                <Counter />
+            </div>
 
             <div className='flex flex-col gap-8 pt-16 md:flex-row'>
                 <SeriesTOC
@@ -55,7 +59,7 @@ export default StaticPropsDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const paths = articleData.map(article => ({
-        params: { id: article.id.toString() },
+        params: { slug: slugify(article.title).toString() },
     }));
 
     return { paths, fallback: false };
@@ -63,8 +67,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     try {
-        const id = params?.id;
-        const item = articleData.find(data => data.id === Number(id));
+        const title = params?.slug as string;
+        const item = articleData.find(
+            data => slugify(data.title) === slugify(title),
+        );
         return { props: { item } };
     } catch (err: any) {
         return { props: { errors: err.message } };
