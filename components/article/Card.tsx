@@ -1,6 +1,6 @@
 import { Article } from '@/types/article';
 
-export default function Article(data: Article) {
+export default function Card(data: Article) {
     return (
         <article>
             <span className='font-lg text-level-up-grey-35'>{data.date}</span>
