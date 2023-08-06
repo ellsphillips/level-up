@@ -1,4 +1,4 @@
-import PathwayContent from '@/components/PathwayContent';
+import PathwayContent from '@/components/pathway/Overview';
 import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 import config from 'config';
