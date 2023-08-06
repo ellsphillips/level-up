@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 
-const FlexibleLink = ({
+const Link = ({
     href,
     ...rest
 }: DetailedHTMLProps<
@@ -13,9 +13,9 @@ const FlexibleLink = ({
 
     if (isInternalLink) {
         return (
-            <Link href={href}>
+            <NextLink href={href}>
                 <a {...rest} />
-            </Link>
+            </NextLink>
         );
     }
 
@@ -28,4 +28,4 @@ const FlexibleLink = ({
     );
 };
 
-export default FlexibleLink;
+export default Link;
