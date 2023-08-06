@@ -1,7 +1,7 @@
 import { Article } from '@/types/article';
 
-import Link from 'next/link';
-import Thumbnail from '../Thumbnail';
+import Link from '@/components/Link';
+import Thumbnail from '@/components/Thumbnail';
 
 export default function Card(data: Article) {
     if (data.thumbnail !== undefined) {
@@ -16,7 +16,6 @@ export default function Card(data: Article) {
                 <Link
                     className='relative flex h-full overflow-hidden transition rounded-lg'
                     href={thumbnailAvailable ? `/articles/${data.id}` : '#'}
-                    as={thumbnailAvailable ? `/articles/${data.id}` : '#'}
                 >
                     <Thumbnail
                         alt={data.title}
