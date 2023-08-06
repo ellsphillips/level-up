@@ -14,14 +14,15 @@ export interface Pathway {
 }
 
 export const pathwaySlugMap = {
+    'software-developer-mindset': 'Software Developer Mindset',
     'production-ready-python': 'Production-ready Python',
 };
 
 export const pathways: Pathway[] = [
     {
-        title: 'Production-ready Python',
-        slug: 'production-ready-python',
-        banner: '/static/pathways/production-ready-python/banner.png',
+        title: 'Software Developer Mindset',
+        slug: 'software-developer-mindset',
+        banner: '/static/pathways/software-developer-mindset/banner.png',
         description:
             'Adopt a software developer mindset to build high-quality applications with maintainable code.',
         content: [
@@ -29,7 +30,7 @@ export const pathways: Pathway[] = [
                 name: 'Getting Started',
                 content: [
                     {
-                        name: 'Production-ready Python',
+                        name: 'Software Developer Mindset',
                         slug: 'welcome',
                     },
                     {
@@ -42,20 +43,16 @@ export const pathways: Pathway[] = [
                 name: 'Pathway content',
                 content: [
                     {
+                        name: 'Data-Driven Design',
+                        slug: 'data-driven-design',
+                    },
+                    {
                         name: 'Favour Composition Over Inheritance',
                         slug: 'favour-composition-over-inheritance',
                     },
                     {
-                        name: 'High Cohesion',
-                        slug: 'high-cohesion',
-                    },
-                    {
-                        name: 'Low Coupling',
-                        slug: 'low-coupling',
-                    },
-                    {
-                        name: 'Start with the Data',
-                        slug: 'start-with-the-data',
+                        name: 'Optimise Cohesion and Coupling',
+                        slug: 'optimise-cohesion-and-coupling',
                     },
                     {
                         name: 'Depend on Abstractions',
@@ -64,10 +61,6 @@ export const pathways: Pathway[] = [
                     {
                         name: 'Separate Creation from Use',
                         slug: 'separate-creation-from-use',
-                    },
-                    {
-                        name: 'Keep Things Simple',
-                        slug: 'keep-things-simple',
                     },
                 ],
             },
