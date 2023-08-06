@@ -66,7 +66,12 @@ export const pathways: Pathway[] = [
             },
             {
                 name: 'Wrap Up',
-                content: [],
+                content: [
+                    {
+                        name: 'Pathway resources',
+                        slug: 'resources',
+                    },
+                ],
             },
         ],
     },
