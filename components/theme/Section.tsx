@@ -22,12 +22,10 @@ export default function Section(props: SectionProps) {
                             alt=''
                             width={1920}
                             height={1080}
-                            objectFit='cover'
-                            objectPosition='center'
                             quality={100}
                             loading='lazy'
                             decoding='async'
-                            className='block origin-top scale-125 opacity-25 max-w-none'
+                            className='block w-full h-auto origin-top scale-125 opacity-25 max-w-none'
                         />
                         <div
                             style={{ backgroundImage: 'url("/img/noise.png")' }}
