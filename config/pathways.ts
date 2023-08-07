@@ -75,4 +75,44 @@ export const pathways: Pathway[] = [
             },
         ],
     },
+    {
+        title: 'Data Engineer Toolkit',
+        slug: 'data-engineer-toolkit',
+        banner: '/static/pathways/data-engineer-toolkit/banner.png',
+        description:
+            'Learn the tools of the trade to build robust data products for business.',
+        content: [
+            {
+                name: 'Getting Started',
+                content: [
+                    {
+                        name: 'Data Engineer Toolkit',
+                        slug: 'welcome',
+                    },
+                    {
+                        name: "What's in store?",
+                        slug: 'whats-in-store',
+                    },
+                ],
+            },
+            {
+                name: 'Pathway content',
+                content: [
+                    {
+                        name: 'Modern Environment',
+                        slug: 'modern-environment',
+                    },
+                ],
+            },
+            {
+                name: 'Wrap Up',
+                content: [
+                    {
+                        name: 'Pathway resources',
+                        slug: 'resources',
+                    },
+                ],
+            },
+        ],
+    },
 ];
