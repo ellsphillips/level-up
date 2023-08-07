@@ -13,7 +13,7 @@ const Link = ({
 
     if (isInternalLink) {
         return (
-            <NextLink href={href}>
+            <NextLink href={href} legacyBehavior>
                 <a {...rest} />
             </NextLink>
         );

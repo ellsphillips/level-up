@@ -20,7 +20,8 @@ export default function Section(props: SectionProps) {
                         <Image
                             src='/img/cta-bokeh.webp'
                             alt=''
-                            layout='fill'
+                            width={1920}
+                            height={1080}
                             objectFit='cover'
                             objectPosition='center'
                             quality={100}
