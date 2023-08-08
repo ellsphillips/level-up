@@ -15,7 +15,7 @@ type Props = {
     errors?: string;
 };
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+export default function ArticlePage({ item, errors }: Props) {
     if (errors) {
         return (
             <Layout title='LEVEL-UP! - Error'>
@@ -53,9 +53,7 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
             </div>
         </Layout>
     );
-};
-
-export default StaticPropsDetail;
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const paths = articleData.map(article => ({

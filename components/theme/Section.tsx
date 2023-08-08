@@ -20,13 +20,12 @@ export default function Section(props: SectionProps) {
                         <Image
                             src='/img/cta-bokeh.webp'
                             alt=''
-                            layout='fill'
-                            objectFit='cover'
-                            objectPosition='center'
+                            width={1920}
+                            height={1080}
                             quality={100}
                             loading='lazy'
                             decoding='async'
-                            className='block origin-top scale-125 opacity-25 max-w-none'
+                            className='block w-full h-auto origin-top scale-125 opacity-25 max-w-none'
                         />
                         <div
                             style={{ backgroundImage: 'url("/img/noise.png")' }}
