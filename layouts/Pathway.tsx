@@ -33,7 +33,7 @@ export default function PathwayLayout({
     return (
         <>
             <Head>
-                <title>LEVEL-UP | {title}</title>
+                <title>{`LEVEL-UP | ${title}`}</title>
                 <meta charSet='utf-8' />
                 <meta
                     name='viewport'
