@@ -10,8 +10,10 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 export default function Section(props: SectionProps) {
     return (
         <section
-            className={`relative overflow-hidden bg-gray-950 ${
-                props.cta && !props.fade && 'border-white/5 border-y-2'
+            className={`relative overflow-hidden dark:bg-gray-950 bg-gray-100 ${
+                props.cta &&
+                !props.fade &&
+                'border-lu-grey-700 dark:border-white/20 border-y-2'
             }`}
         >
             {props.cta && (
@@ -29,7 +31,7 @@ export default function Section(props: SectionProps) {
                         />
                         <div
                             style={{ backgroundImage: 'url("/img/noise.png")' }}
-                            className='absolute inset-0 bg-left bg-repeat opacity-[0.15]'
+                            className='absolute inset-0 bg-left bg-repeat dark:opacity-[0.15] opacity-[0.05]'
                         ></div>
                     </div>
                     {props.fade && (

@@ -13,18 +13,24 @@ const Link = ({
 
     if (isInternalLink) {
         return (
-            <NextLink href={href} legacyBehavior>
-                <a {...rest} />
+            <NextLink href={href} legacyBehavior passHref>
+                <a className='hyperlink' {...rest} />
             </NextLink>
         );
     }
 
     if (isAnchorLink) {
-        return <a href={href} {...rest} />;
+        return <a className='hyperlink' href={href} {...rest} />;
     }
 
     return (
-        <a target='_blank' rel='noopener noreferrer' href={href} {...rest} />
+        <a
+            className='hyperlink'
+            target='_blank'
+            rel='noopener noreferrer'
+            href={href}
+            {...rest}
+        />
     );
 };
 

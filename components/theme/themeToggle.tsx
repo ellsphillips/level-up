@@ -28,7 +28,7 @@ export default function ThemeToggle({ onClick }: Props) {
             }`}
         >
             <div
-                className={`w-4 h-4 rounded-md absolute transform duration-300 ease-out bg-white left-0.5 ${
+                className={`w-4 h-4 rounded-[4px] absolute transform duration-300 ease-out bg-white left-0.5 ${
                     isOn ? 'translate-x-6' : 'translate-x-0'
                 }`}
             />

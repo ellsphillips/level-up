@@ -49,26 +49,31 @@ export default function PathwayLayout({
                 <Nav />
 
                 <header className='py-12'>
-                    <div className='flex flex-col gap-4'>
-                        <span className='text-sm font-semibold tracking-wider text-gray-400 uppercase'>
+                    <section className='flex flex-col gap-4'>
+                        <span className='text-sm font-semibold tracking-wider uppercase text-lu-grey-700 dark:text-gray-400'>
                             {`Pathways / ${pathwaySlug} /`}
                         </span>
-                        <h1 className='text-4xl font-bold'>{title}</h1>
-                        <p className='text-gray-300'>{summary}</p>
-                        <div className='flex items-center pt-8 text-sm text-gray-500 align-baseline dark:text-gray-400 xl:pt-8'>
+                        <h1 className='text-4xl font-bold dark:text-gray-100'>
+                            {title}
+                        </h1>
+                        <p className='font-semibold text-lu-grey-800 dark:text-gray-300'>
+                            {summary}
+                        </p>
+                        <div className='flex items-center pt-8 text-sm align-baseline text-lu-grey-800 dark:text-gray-400 xl:pt-8'>
+                            <span className='mr-2'>&larr;</span>
                             <Link
                                 href={`/pathways/${pathwaySlug}`}
-                                className='hover:text-lu-grey-200 dark:hover:text-primary-400'
+                                className='hyperlink hover:text-lu-grey-700 dark:hover:text-primary-400'
                             >
-                                &larr; Back to pathway
+                                Back to pathway
                             </Link>
                             <BsDot className='text-4xl' />
                             <p>{readingTime.text}</p>
                         </div>
-                    </div>
+                    </section>
                 </header>
 
-                <div className='flex min-h-full min-w-0 flex-col items-center justify-center shadow-xl mt-4 overflow-hidden rounded-lg bg-gray-800 ring-1 ring-inset ring-white/5 aspect-[2/1]'>
+                <section className='flex min-h-full min-w-0 flex-col items-center justify-center shadow-xl mt-4 overflow-hidden rounded-lg dark:bg-gray-800 bg-slate-200 ring-1 ring-inset ring-white/5 aspect-[2/1]'>
                     {banner ? (
                         <img
                             src={banner}
@@ -78,9 +83,9 @@ export default function PathwayLayout({
                     ) : (
                         <Counter />
                     )}
-                </div>
+                </section>
 
-                <div className='flex flex-col gap-8 pt-16 md:flex-row'>
+                <section className='flex flex-col gap-8 pt-16 md:flex-row'>
                     <SeriesTOC
                         series={articlesInSeries}
                         className='w-full md:w-1/3'
@@ -88,23 +93,17 @@ export default function PathwayLayout({
                     <article className='flex-1 prose fade-in max-w-none dark:prose-dark'>
                         {children}
 
-                        <div className='pt-8 xl:divide-y xl:divide-gray-100 xl:dark:divide-gray-800'>
-                            <div
-                                className='pb-8 divide-y divide-gray-100 dark:divide-gray-800 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0'
-                                style={{ gridTemplateRows: 'auto 1fr' }}
-                            >
-                                <div>
-                                    <div className='xl:sticky xl:top-32'>
-                                        <div className='text-sm font-medium leading-5 divide-gray-100 dark:divide-gray-800 xl:col-start-1 xl:row-start-2 xl:divide-y'>
-                                            {(next || prev) &&
-                                                NextPeviousPage({ next, prev })}
-                                        </div>
-                                    </div>
-                                </div>
+                        <div
+                            className='py-8 divide-y divide-gray-100 dark:divide-gray-800 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0'
+                            style={{ gridTemplateRows: 'auto 1fr' }}
+                        >
+                            <div className='text-sm font-medium leading-5 dark:divide-gray-800'>
+                                {(next || prev) &&
+                                    NextPeviousPage({ next, prev })}
                             </div>
                         </div>
                     </article>
-                </div>
+                </section>
                 <Footer />
             </main>
         </>
