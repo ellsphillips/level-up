@@ -21,16 +21,16 @@ export default function PathwayContent(
 
         return (
             <>
-                <h2 className='py-4 text-lg font-bold text-lu-grey-200 font-4xl'>
+                <h2 className='py-4 text-lg font-bold dark:text-lu-grey-200 text-lu-grey-800 font-4xl'>
                     {name}
                 </h2>
                 {content?.map(({ name, slug }) => (
                     <Link
                         key={name}
                         href={getSlug(pathway.slug, slug)}
-                        className='flex items-center w-full text-sm rounded hover:bg-slate-800 hover:cursor-pointer'
+                        className='flex items-center w-full text-sm rounded hover:bg-lu-grey-100 dark:hover:bg-slate-800 hover:cursor-pointer'
                     >
-                        <h3 className='flex items-center mx-4 my-1 text-lg text-gray-500 dark:text-gray-400'>
+                        <h3 className='flex items-center mx-4 my-1 text-lg text-lu-grey-700 dark:text-gray-400'>
                             {name}
                         </h3>
                     </Link>

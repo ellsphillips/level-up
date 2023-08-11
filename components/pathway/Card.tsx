@@ -29,7 +29,7 @@ export default function Card(data: Article) {
                     <span>Lesson {data.id}</span>
                     <span>8 mins</span>
                 </p>
-                <div className='mt-2 text-lg font-semibold text-white'>
+                <div className='mt-2 text-lg font-semibold '>
                     <a
                         className='inline-block'
                         href='/courses/react-server-components/building-a-users-table'
@@ -37,7 +37,9 @@ export default function Card(data: Article) {
                         {data.title}
                     </a>
                 </div>
-                <p className='mt-1.5 text-gray-400'>{data.description}</p>
+                <p className='mt-1.5 text-lu-grey-700 dark:text-gray-400'>
+                    {data.description}
+                </p>
             </div>
         </div>
     );

@@ -7,7 +7,13 @@
 html,
 body,
 * + * {
-    transition: background-color 250ms 0s, color 250ms 0s;
+    transition: background-color 200ms 0s, color 200ms 0s;
+}
+
+h1,
+h2,
+h3 {
+    @apply dark:text-lu-grey-100 text-lu-grey-900;
 }
 
 @keyframes fade-in {

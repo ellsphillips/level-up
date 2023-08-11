@@ -35,7 +35,7 @@ export default function Section(props: SectionProps) {
                         ></div>
                     </div>
                     {props.fade && (
-                        <div className='absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-gray-950' />
+                        <div className='absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t dark:from-gray-950 from-gray-100' />
                     )}
                 </>
             )}
