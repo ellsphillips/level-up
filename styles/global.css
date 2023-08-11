@@ -4,6 +4,12 @@
     animation-fill-mode: forwards;
 }
 
+html,
+body,
+* + * {
+    transition: background-color 250ms 0s, color 250ms 0s;
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
