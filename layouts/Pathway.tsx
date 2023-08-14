@@ -90,13 +90,10 @@ export default function PathwayLayout({
                         series={articlesInSeries}
                         className='w-full md:w-1/3'
                     />
-                    <article className='flex-1 prose fade-in max-w-none dark:prose-dark'>
+                    <article className='flex-1 prose text-black dark:text-lu-grey-100 fade-in max-w-none dark:prose-dark'>
                         {children}
 
-                        <div
-                            className='py-8 divide-y divide-gray-100 dark:divide-gray-800 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0'
-                            style={{ gridTemplateRows: 'auto 1fr' }}
-                        >
+                        <div className='py-8 divide-y divide-gray-100 dark:divide-gray-800 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0'>
                             <div className='text-sm font-medium leading-5 dark:divide-gray-800'>
                                 {(next || prev) &&
                                     NextPeviousPage({ next, prev })}

@@ -39,7 +39,7 @@ export default function Card(props: Props) {
                 <div className='mt-2 text-lg font-semibold '>
                     <a
                         className='inline-block'
-                        href='/courses/react-server-components/building-a-users-table'
+                        href={`/pathways/${props.slug}`}
                     >
                         {props.title}
                     </a>
