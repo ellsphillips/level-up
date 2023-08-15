@@ -8,6 +8,7 @@ pre[class*='language-'] {
     color: #eee;
     font-family: 'Fira Code', monospace;
     font-size: 1em;
+    font-weight: 700;
     line-height: 1.5em;
 
     -moz-tab-size: 4;
@@ -73,6 +74,14 @@ pre[class*='language-'] {
     padding: 1.25em 1em;
 }
 
+.code-line {
+    color: #444;
+}
+
+.dark .code-line {
+    color: #fff;
+}
+
 .language-css > code,
 .language-sass > code,
 .language-scss > code {
@@ -93,15 +102,15 @@ pre[class*='language-'] {
 }
 
 .token.attr-name {
-    color: #ffcb6b;
+    color: #e3a93d;
 }
 
 .token.attr-value {
-    color: #a5e844;
+    color: #81cf15;
 }
 
 .token.attribute {
-    color: #a5e844;
+    color: #81cf15;
 }
 
 .token.boolean {
@@ -109,7 +118,7 @@ pre[class*='language-'] {
 }
 
 .token.builtin {
-    color: #ffcb6b;
+    color: #e3a93d;
 }
 
 .token.cdata {
@@ -129,7 +138,7 @@ pre[class*='language-'] {
 }
 
 .token.comment {
-    color: #616161;
+    color: #aaa;
 }
 
 .token.constant {
@@ -149,7 +158,7 @@ pre[class*='language-'] {
 }
 
 .token.function {
-    color: #ffcb6b;
+    color: #f2ad2c;
 }
 
 .token.hexcode {
@@ -191,11 +200,11 @@ pre[class*='language-'] {
 }
 
 .token.pseudo-class {
-    color: #a5e844;
+    color: #81cf15;
 }
 
 .token.pseudo-element {
-    color: #a5e844;
+    color: #81cf15;
 }
 
 .token.punctuation {
