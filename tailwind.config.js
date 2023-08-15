@@ -11,6 +11,7 @@ module.exports = {
         './lib/**/*.ts',
         './data/**/*.mdx',
     ],
+    safelist: ['dark'],
     theme: {
         extend: {
             screens: {
