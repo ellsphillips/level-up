@@ -13,7 +13,7 @@ body,
 h1,
 h2,
 h3 {
-    @apply dark:text-lu-grey-100 text-lu-grey-900;
+    @apply dark:text-slate-100 text-slate-900;
 }
 
 @keyframes fade-in {

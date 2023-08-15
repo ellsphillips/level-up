@@ -48,10 +48,10 @@ export default function Pathway({
 
                 <h1 className='py-8 text-4xl font-bold'>Pathways</h1>
 
-                <div className='divide-y-2 divide-lu-grey-700/25'>
+                <div className='divide-y-2 divide-slate-700/25'>
                     {pathwayInfo.map(pathway => (
                         <section className='py-16 mx-auto space-y-8 max-w-7xl'>
-                            <h2 className='text-2xl font-bold text-lu-grey-800 dark:text-lu-grey-100'>
+                            <h2 className='text-2xl font-bold text-slate-800 dark:text-slate-100'>
                                 {pathway.title}
                             </h2>
                             <div className='grid gap-8 lg:grid-cols-3'>

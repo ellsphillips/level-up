@@ -50,20 +50,20 @@ export default function PathwayLayout({
 
                 <header className='py-12'>
                     <section className='flex flex-col gap-4'>
-                        <span className='text-sm font-semibold tracking-wider uppercase text-lu-grey-700 dark:text-gray-400'>
+                        <span className='text-sm font-semibold tracking-wider uppercase text-slate-700 dark:text-gray-400'>
                             {`Pathways / ${pathwaySlug} /`}
                         </span>
                         <h1 className='text-4xl font-bold dark:text-gray-100'>
                             {title}
                         </h1>
-                        <p className='font-semibold text-lu-grey-800 dark:text-gray-300'>
+                        <p className='font-semibold text-slate-800 dark:text-gray-300'>
                             {summary}
                         </p>
-                        <div className='flex items-center pt-8 text-sm align-baseline text-lu-grey-800 dark:text-gray-400 xl:pt-8'>
+                        <div className='flex items-center pt-8 text-sm align-baseline text-slate-800 dark:text-gray-400 xl:pt-8'>
                             <span className='mr-2'>&larr;</span>
                             <Link
                                 href={`/pathways/${pathwaySlug}`}
-                                className='hyperlink hover:text-lu-grey-700 dark:hover:text-primary-400'
+                                className='hyperlink hover:text-slate-700 dark:hover:text-primary-400'
                             >
                                 Back to pathway
                             </Link>
@@ -90,7 +90,7 @@ export default function PathwayLayout({
                         series={articlesInSeries}
                         className='w-full md:w-1/3'
                     />
-                    <article className='flex-1 prose text-black dark:text-lu-grey-100 fade-in max-w-none dark:prose-dark'>
+                    <article className='flex-1 prose text-black dark:text-slate-100 fade-in max-w-none dark:prose-dark'>
                         {children}
 
                         <div className='py-8 divide-y divide-gray-100 dark:divide-gray-800 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0'>

@@ -13,7 +13,7 @@ export default function Section(props: SectionProps) {
             className={`transition-all duration-200 ease-in-out relative overflow-hidden dark:bg-gray-950 bg-gray-100 ${
                 props.cta &&
                 !props.fade &&
-                'border-lu-grey-700 dark:border-white/20 border-y-2'
+                'border-slate-400 dark:border-white/20 border-y-2'
             }`}
         >
             {props.cta && (

@@ -23,7 +23,7 @@ export default function ThemeToggle({ onClick }: Props) {
             tabIndex={0}
             onKeyDown={handleKeyDown}
             onClick={toggle}
-            className={`cursor-pointer w-11 h-5 bg-lu-grey-900 dark:bg-gray-600 rounded-md relative px-1.5 flex items-center${
+            className={`cursor-pointer w-11 h-5 bg-slate-700 dark:bg-gray-600 rounded-md relative px-1.5 flex items-center${
                 isOn ? '' : ' justify-end'
             }`}
         >
@@ -35,7 +35,7 @@ export default function ThemeToggle({ onClick }: Props) {
             {isOn ? (
                 <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-3 h-3 text-lu-grey-200'
+                    className='w-3 h-3 text-slate-200'
                     viewBox='0 0 20 20'
                     fill='currentColor'
                 >
@@ -44,7 +44,7 @@ export default function ThemeToggle({ onClick }: Props) {
             ) : (
                 <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-3 h-3 text-lu-grey-200'
+                    className='w-3 h-3 text-slate-200'
                     viewBox='0 0 20 20'
                     fill='currentColor'
                 >

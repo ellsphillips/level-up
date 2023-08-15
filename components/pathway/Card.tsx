@@ -44,7 +44,7 @@ export default function Card(props: Props) {
                         {props.title}
                     </a>
                 </div>
-                <p className='mt-1.5 text-lu-grey-700 dark:text-gray-400'>
+                <p className='mt-1.5 text-slate-700 dark:text-gray-400'>
                     {props.description}
                 </p>
             </div>
