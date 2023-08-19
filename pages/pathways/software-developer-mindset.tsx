@@ -1,4 +1,4 @@
-import PathwayContent from '@/components/pathway/Overview';
+import Overview from '@/components/pathway/Overview';
 import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 import config from 'config';
@@ -28,13 +28,13 @@ export default function SoftwareDeveloperMindset(
                     content='initial-scale=1.0, width=device-width'
                 />
             </Head>
-            <div className='max-w-6xl p-8 mx-auto'>
+            <div className='flex flex-col max-w-6xl min-h-full p-8 mx-auto'>
                 <Nav />
 
                 <h1 className='text-4xl font-bold'>{title}</h1>
 
-                <div className='divide-y-2 divide-gray-100 fade-in dark:divide-gray-800'>
-                    <PathwayContent pathway={pathway} />
+                <div className='divide-y-2 divide-gray-100 grow fade-in dark:divide-gray-800'>
+                    <Overview pathway={pathway} />
                 </div>
 
                 <Footer />

@@ -1,12 +1,12 @@
 import Card from '@/components/pathway/Card';
 import Section from '@/components/theme/Section';
 import { articleData } from '@/data/articles';
-import Layout from '@/layouts/App';
 
+import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 
 const Home = () => (
-    <Layout title='LEVEL-UP! - Home'>
+    <>
         <main>
             <Section cta fade>
                 <Nav />
@@ -37,7 +37,10 @@ const Home = () => (
                 </div>
             </Section>
         </main>
-    </Layout>
+        <Section>
+            <Footer />
+        </Section>
+    </>
 );
 
 export default Home;

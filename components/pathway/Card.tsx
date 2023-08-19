@@ -1,43 +1,52 @@
-import { Article } from '@/types/article';
-
 import Link from '@/components/Link';
 import Thumbnail from '@/components/Thumbnail';
 
-export default function Card(data: Article) {
-    if (data.thumbnail !== undefined) {
-        const thumbnail = data.thumbnail ? data.thumbnail : 'example';
+interface Props {
+    title: string;
+    description: string;
+    thumbnail?: string;
+    readingTime?: string;
+    id: number;
+    slug: string;
+}
+
+export default function Card(props: Props) {
+    if (props.thumbnail !== undefined) {
+        const thumbnail = props.thumbnail ? props.thumbnail : 'example';
     }
 
-    const thumbnailAvailable = data.thumbnail !== undefined;
+    const thumbnailAvailable = props.thumbnail !== undefined;
 
     return (
         <div className='flex md:flex-col md:w-auto lg:max-w-none'>
             <div className='max-w-[40%] md:max-w-none w-full aspect-video'>
                 <Link
                     className='relative flex h-full overflow-hidden transition rounded-lg'
-                    href={thumbnailAvailable ? `/articles/${data.id}` : '#'}
+                    href={thumbnailAvailable ? `/pathways/${props.slug}` : '#'}
                 >
                     <Thumbnail
-                        alt={data.title}
-                        src={`/img/${data.thumbnail}.jpg`}
+                        alt={props.title}
+                        src={`/img/${props.thumbnail}.jpg`}
                         unavailable={!thumbnailAvailable}
                     />
                 </Link>
             </div>
             <div className='pl-4 md:p-0'>
                 <p className='flex justify-between mt-3 ml-auto text-sm font-medium text-gray-500'>
-                    <span>Lesson {data.id}</span>
-                    <span>8 mins</span>
+                    <span>Lesson {props.id}</span>
+                    <span>{props.readingTime}</span>
                 </p>
-                <div className='mt-2 text-lg font-semibold text-white'>
+                <div className='mt-2 text-lg font-semibold '>
                     <a
                         className='inline-block'
-                        href='/courses/react-server-components/building-a-users-table'
+                        href={`/pathways/${props.slug}`}
                     >
-                        {data.title}
+                        {props.title}
                     </a>
                 </div>
-                <p className='mt-1.5 text-gray-400'>{data.description}</p>
+                <p className='mt-1.5 text-slate-700 dark:text-gray-400'>
+                    {props.description}
+                </p>
             </div>
         </div>
     );

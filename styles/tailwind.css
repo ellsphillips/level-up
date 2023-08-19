@@ -4,7 +4,31 @@
 
 @layer base {
     body {
-        @apply bg-slate-950 text-gray-100;
+        @apply bg-slate-950 text-gray-100 transition-colors ease-in-out duration-200;
+    }
+}
+
+@layer components {
+    .custom-ring {
+        @apply focus:outline-none focus-visible:ring focus-visible:ring-orange-500;
+    }
+    .custom-focus {
+        @apply focus:outline-none focus:bg-inherit focus-visible:bg-oring-orange-500;
+    }
+    .hyperlink {
+        @apply custom-ring text-cyan-600 underline underline-offset-[2px] decoration-[1px] hover:decoration-[2px] group-hover:decoration-[2px];
+    }
+    .hyperlink-without-group-hover {
+        @apply custom-ring text-cyan-600 underline underline-offset-[3px] decoration-[1px] hover:decoration-[3px];
+    }
+    .hyperlink-reverse {
+        @apply custom-ring text-slate-400 underline underline-offset-[3px] decoration-[1px] hover:decoration-[2px] group-hover:decoration-[2px];
+    }
+    .hoverable {
+        @apply cursor-pointer;
+    }
+    .mark {
+        @apply bg-yellow-300 font-bold;
     }
 }
 
