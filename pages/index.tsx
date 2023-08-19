@@ -5,10 +5,14 @@ import { articleData } from '@/data/articles';
 import Link from '@/components/Link';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import WhatsIncluded from '@/components/WhatsIncluded';
+import Chip from '@/components/framework/Chip';
 import PathwayIcon, { type PathwayID } from '@/components/pathway/Icon';
 import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 import slugify from '@/lib/utils/slugify';
+import { DDATLevel } from '@/types/framework';
+
+import { DDAT_LEVEL_DATA } from '@/components/framework/Chip';
 
 const Home = () => (
     <>
@@ -30,6 +34,32 @@ const Home = () => (
                         the gap between junior and senior roles
                     </p>
                 </div>
+            </Section>
+
+            <Section className='py-12 space-y-8'>
+                <h2 className='text-2xl font-bold'>Pathways</h2>
+
+                <p className='mt-4 text-lg font-medium'>
+                    Aligned to the DDaT{' '}
+                    <Link href='https://www.gov.uk/government/collections/digital-data-and-technology-profession-capability-framework'>
+                        Profession Capability Framework
+                    </Link>
+                    , each career pathway covers the relevant profession's skill
+                    requirements progressively through the below skill levels.
+                </p>
+
+                {['working', 'practitioner', 'expert'].map((level, i) => (
+                    <div key={i} className='flex space-x-6'>
+                        <div className='flex items-start justify-end w-32 h-full pt-1'>
+                            <Chip variant={level as DDATLevel}>{level}</Chip>
+                        </div>
+                        <div className='flex-1'>
+                            <p className='text-lg font-semibold'>
+                                {DDAT_LEVEL_DATA[level as DDATLevel]}
+                            </p>
+                        </div>
+                    </div>
+                ))}
             </Section>
 
             <Section className='py-8 space-y-8 lg:-top-16'>
@@ -69,7 +99,7 @@ const Home = () => (
 
                         <Link
                             href='https://www.gov.uk/government/collections/digital-data-and-technology-profession-capability-framework'
-                            className='inline-block mt-8 font-semibold hyperlink text-accent hover:text-accent-light'
+                            className='inline-block mt-8 font-semibold hyperlink'
                         >
                             Find out more →
                         </Link>
