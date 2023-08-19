@@ -13,7 +13,6 @@ const Nav = () => {
             </Link>
             <div className='flex items-center space-x-8'>
                 <nav className='flex space-x-8 sm:justify-end'>
-                    <Link href='/articles'>Articles</Link>
                     <Link href='/pathways'>Pathways</Link>
                 </nav>
                 <ThemeToggle
