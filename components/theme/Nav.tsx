@@ -1,9 +1,7 @@
-import Link from 'next/link';
-import Logo from '../Logo';
-
+import Logo from '@/components/Logo';
 import ThemeToggle from '@/components/theme/themeToggle';
-
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 
 const Nav = () => {
     const { theme, setTheme } = useTheme();
