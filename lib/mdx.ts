@@ -17,8 +17,10 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCitation from 'rehype-citation';
 import rehypeKatex from 'rehype-katex';
 import rehypePresetMinify from 'rehype-preset-minify';
-import rehypePrismPlus from 'rehype-prism-plus';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
+import darkTheme from '../styles/dark-plus.json';
+// import lightTheme from '../styles/light-plus.json';
 
 const root = process.cwd();
 
@@ -92,7 +94,7 @@ export async function getFileBySlug<T>(
                 rehypeAutolinkHeadings,
                 rehypeKatex,
                 [rehypeCitation, { path: path.join(root, 'data') }],
-                [rehypePrismPlus, { ignoreMissing: true }],
+                [rehypePrettyCode, { theme: darkTheme }],
                 rehypePresetMinify,
             ];
             return options;
