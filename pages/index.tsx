@@ -3,6 +3,7 @@ import Section from '@/components/theme/Section';
 import { articleData } from '@/data/articles';
 
 import Link from '@/components/Link';
+import NewsletterSignup from '@/components/NewsletterSignup';
 import PathwayIcon, { type PathwayID } from '@/components/pathway/Icon';
 import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
@@ -89,33 +90,7 @@ const Home = () => (
                             available
                         </p>
                         <div className='w-full mt-10'>
-                            <form>
-                                <label
-                                    htmlFor='email'
-                                    className='text-sm font-medium'
-                                >
-                                    Enter your email
-                                </label>
-                                <div className='flex flex-col mt-2 rounded-md shadow-sm lg:flex-row'>
-                                    <div className='relative flex items-stretch flex-grow focus-within:z-10'>
-                                        <input
-                                            id='email'
-                                            name='email'
-                                            type='email'
-                                            required={true}
-                                            data-testid='checkout-email'
-                                            className='block w-full border-gray-400 rounded-md bg-white/5 focus-visible:border-white focus-visible:outline-none focus-visible:ring-0 sm:text-sm lg:rounded-none lg:rounded-l-md'
-                                        />
-                                    </div>
-                                    <button
-                                        className='relative px-4 py-2 mt-4 -ml-px space-x-2 overflow-hidden font-semibold border rounded-md border-primary-500 bg-primary-500 hover:bg-primary-400 focus-visible:border-white focus-visible:outline-none lg:mt-0 lg:rounded-l-none lg:rounded-r-md lg:border-gray-400 lg:py-2 lg:text-sm lg:focus-visible:border-white '
-                                        type='submit'
-                                        data-testid='checkout-button'
-                                    >
-                                        <span>Sign up →</span>
-                                    </button>
-                                </div>
-                            </form>
+                            <NewsletterSignup />
                         </div>
                     </div>
                 </div>
