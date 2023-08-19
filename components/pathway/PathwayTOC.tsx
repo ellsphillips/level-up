@@ -28,7 +28,7 @@ export default function PathwayTOC(props: PathwayTOCProps) {
                             className='flex items-center justify-between'
                         >
                             <div
-                                className={`flex items-center w-full px-4 py-2 text-sm rounded hover:bg-neutral-200 dark:hover:bg-slate-700 hover:cursor-pointer ${
+                                className={`flex duration-200 items-center w-full px-4 py-2 text-sm rounded hover:bg-neutral-200 dark:hover:bg-slate-700 hover:cursor-pointer ${
                                     router.asPath.split('/').pop() ===
                                         article.slug &&
                                     'bg-neutral-100 dark:bg-slate-800'
