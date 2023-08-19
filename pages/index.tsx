@@ -4,6 +4,7 @@ import { articleData } from '@/data/articles';
 
 import Link from '@/components/Link';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import WhatsIncluded from '@/components/WhatsIncluded';
 import PathwayIcon, { type PathwayID } from '@/components/pathway/Icon';
 import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
@@ -94,6 +95,14 @@ const Home = () => (
                         </div>
                     </div>
                 </div>
+            </Section>
+
+            <Section className='py-12'>
+                <h2 className='text-2xl font-bold'>Open to all</h2>
+                <p className='mt-4 font-medium text-md'>
+                    All content is available to everyone, for free, always.
+                </p>
+                <WhatsIncluded />
             </Section>
         </main>
         <Section>
