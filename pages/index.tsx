@@ -47,21 +47,22 @@ const Home = () => (
             </Section>
 
             <Section cta className='py-12 space-y-4'>
-                <h2 className='text-4xl font-bold'>The DDaT framework</h2>
+                <h2 className='text-4xl font-bold'>
+                    Digital, Data and Technology
+                </h2>
                 <div className='mt-4 grid gap-x-3.5 lg:mt-11 lg:grid-cols-3'>
                     <div className='lg:col-span-2 lg:pr-20'>
                         <p className='text-lg font-medium lg:text-2xl'>
-                            LEVEL-UP! uses Government's DDaT framework to shape
-                            the future of technical learning.
+                            LEVEL-UP! applies the DDaT framework to shape the
+                            future of Government's technical learning.
                         </p>
-                        <p className='mt-8 space-y-4 text-gray-300 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 lg:mt-6 lg:block lg:space-y-4 lg:text-lg'>
-                            As a digital, data and technology specialist you'll
-                            work at the cutting edge of how people interact, and
-                            are empowered by digital government services.
-                            Government is undergoing a digital transformation,
-                            never has the time been better to pursue your career
-                            in a sector, in a role, that truly delivers on the
-                            promise of innovation.
+                        <p className='mt-8 space-y-4 dark:text-gray-300 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 lg:mt-6 lg:block lg:space-y-4 lg:text-lg'>
+                            As a DDaT specialist you'll work at the cutting edge
+                            how people interact, and are empowered by digital
+                            government services. Government is undergoing a
+                            digital transformation, never has the time been
+                            better to pursue your career in a sector, in a role,
+                            that truly delivers on the promise of innovation.
                         </p>
 
                         <Link
@@ -83,7 +84,7 @@ const Home = () => (
                                 </div>
                             ))}
                         </div>
-                        <p className='mt-2 text-lg font-medium text-white lg:text-base'>
+                        <p className='mt-2 text-lg font-medium lg:text-base'>
                             Subscribe to be notified when new content is
                             available
                         </p>
@@ -91,7 +92,7 @@ const Home = () => (
                             <form>
                                 <label
                                     htmlFor='email'
-                                    className='text-sm font-medium text-white'
+                                    className='text-sm font-medium'
                                 >
                                     Enter your email
                                 </label>
@@ -107,7 +108,7 @@ const Home = () => (
                                         />
                                     </div>
                                     <button
-                                        className='relative px-4 py-2 mt-4 -ml-px space-x-2 overflow-hidden font-semibold text-white border rounded-md border-accent bg-accent hover:bg-accent-light focus-visible:border-white focus-visible:outline-none lg:mt-0 lg:rounded-l-none lg:rounded-r-md lg:border-gray-400 lg:py-2 lg:text-sm lg:focus-visible:border-white '
+                                        className='relative px-4 py-2 mt-4 -ml-px space-x-2 overflow-hidden font-semibold border rounded-md border-primary-500 bg-primary-500 hover:bg-primary-400 focus-visible:border-white focus-visible:outline-none lg:mt-0 lg:rounded-l-none lg:rounded-r-md lg:border-gray-400 lg:py-2 lg:text-sm lg:focus-visible:border-white '
                                         type='submit'
                                         data-testid='checkout-button'
                                     >
