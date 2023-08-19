@@ -1,13 +1,13 @@
 import Link from '@/components/Link';
-import SeriesTOC from '@/components/article/SeriesTOC';
 import Counter from '@/components/demo/Counter';
 import NextPeviousPage from '@/components/pathway/NextPeviousPage';
+import PathwayTOC from '@/components/pathway/PathwayTOC';
 import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 import Section from '@/components/theme/Section';
-import { Article, FrontMatter } from '@/types/article';
+import { FrontMatter } from '@/types/article';
 import Head from 'next/head';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { BsDot } from 'react-icons/bs';
 
 interface Props {
@@ -16,6 +16,8 @@ interface Props {
     prev?: { slug: string; title: string };
     children: ReactNode;
 }
+
+import { pathways } from 'config/pathways';
 
 export default function PathwayLayout({
     frontMatter,
@@ -28,7 +30,9 @@ export default function PathwayLayout({
     const [pathwaySlug] = slug.split('/');
     const banner = images?.[0];
 
-    const [articlesInSeries, setArticlesInSeries] = useState<Article[]>([]);
+    const articlesInPathway = pathways
+        .filter(p => p.slug === pathwaySlug)[0]
+        .content.filter(c => c.name === 'Pathway content')[0].content;
 
     return (
         <>
@@ -86,8 +90,9 @@ export default function PathwayLayout({
                 </section>
 
                 <section className='flex flex-col gap-8 pt-16 md:flex-row'>
-                    <SeriesTOC
-                        series={articlesInSeries}
+                    <PathwayTOC
+                        slug={pathwaySlug}
+                        series={articlesInPathway}
                         className='w-full md:w-1/3'
                     />
                     <article className='flex-1 prose text-black dark:text-slate-100 fade-in max-w-none dark:prose-dark'>
