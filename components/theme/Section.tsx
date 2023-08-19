@@ -27,7 +27,7 @@ export default function Section(props: SectionProps) {
                             quality={100}
                             loading='lazy'
                             decoding='async'
-                            className='block w-full h-auto origin-top scale-125 opacity-25 max-w-none'
+                            className='block w-full h-auto origin-top scale-125 opacity-10 max-w-none'
                         />
                         <div
                             style={{ backgroundImage: 'url("/img/noise.png")' }}
