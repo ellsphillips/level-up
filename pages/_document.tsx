@@ -35,7 +35,7 @@ class LUDocument extends Document {
                         href='/feed.xml'
                     />
                 </Head>
-                <body className='antialiased text-black bg-white dark:bg-gray-900 dark:text-white'>
+                <body className='antialiased text-black bg-white dark:bg-slate-900 dark:text-white'>
                     <Main />
                     <NextScript />
                 </body>

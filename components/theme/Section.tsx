@@ -10,7 +10,7 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 export default function Section(props: SectionProps) {
     return (
         <section
-            className={`transition-all duration-200 ease-in-out relative overflow-hidden dark:bg-gray-950 bg-gray-100 ${
+            className={`transition-all duration-200 ease-in-out relative overflow-hidden ${
                 props.cta &&
                 !props.fade &&
                 'border-slate-400 dark:border-white/20 border-y-2'
@@ -35,7 +35,7 @@ export default function Section(props: SectionProps) {
                         ></div>
                     </div>
                     {props.fade && (
-                        <div className='absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t dark:from-gray-950 from-gray-100' />
+                        <div className='absolute inset-x-0 bottom-0 h-48 transition-all duration-200 bg-gradient-to-t dark:from-gray-900 from-white' />
                     )}
                 </>
             )}
