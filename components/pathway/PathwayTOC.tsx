@@ -12,8 +12,8 @@ export default function PathwayTOC(props: PathwayTOCProps) {
     const router = useRouter();
 
     return (
-        <aside>
-            <a className='text-xl font-medium text-white sm:font-semibold'>
+        <aside className='sticky top-0 h-screen'>
+            <a className='text-xl font-medium sm:font-semibold'>
                 {props.series[0]?.name}
             </a>
             <p className='mt-1 text-sm text-gray-500 sm:text-base'>

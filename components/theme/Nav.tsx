@@ -12,7 +12,12 @@ const Nav = () => {
                 <Logo />
             </Link>
             <div className='flex items-center space-x-8'>
-                <nav className='flex space-x-8 sm:justify-end'>
+                <nav
+                    className={`
+                        flex space-x-8 sm:justify-end font-semibold
+                        [&_a]:transition-colors [&_a]:hover:text-primary-400
+                    `}
+                >
                     <Link href='/pathways'>Pathways</Link>
                 </nav>
                 <ThemeToggle
