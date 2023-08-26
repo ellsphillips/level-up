@@ -70,7 +70,7 @@ module.exports = {
                             color: theme('colors.neutral.900'),
                         },
                         pre: {
-                            backgroundColor: theme('colors.neutral.50'),
+                            // backgroundColor: theme('colors.neutral.50'),
                         },
                         code: {
                             color: theme('colors.primary.500'),
