@@ -1,9 +1,12 @@
 import Overview from '@/components/pathway/Overview';
+import Accordion from '@/components/theme/Accordion';
 import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 import config from 'config';
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
+
+import roles from '@/data/roles.json';
 
 const SLUG = 'software-developer-mindset';
 
@@ -17,6 +20,8 @@ export default function SoftwareDeveloperMindset(
 ): React.ReactElement {
     const { pathway } = props;
     const { title, description } = pathway;
+
+    const criteria = roles[SLUG];
 
     return (
         <>
@@ -33,9 +38,14 @@ export default function SoftwareDeveloperMindset(
 
                 <h1 className='text-4xl font-bold'>{title}</h1>
 
-                <div className='divide-y-2 divide-gray-100 grow fade-in dark:divide-gray-800'>
+                <div className='pb-24 divide-y-2 divide-gray-100 fade-in dark:divide-gray-800'>
                     <Overview pathway={pathway} />
                 </div>
+
+                <h2 className='pb-8 text-2xl font-bold'>
+                    Skills needed to be a Software Developer
+                </h2>
+                <Accordion items={criteria} />
 
                 <Footer />
             </div>
