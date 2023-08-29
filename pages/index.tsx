@@ -5,14 +5,12 @@ import { articleData } from '@/data/articles';
 import Link from '@/components/Link';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import WhatsIncluded from '@/components/WhatsIncluded';
-import Chip from '@/components/framework/Chip';
+import Chip, { DDAT_LEVEL_DATA } from '@/components/framework/Chip';
 import PathwayIcon, { type PathwayID } from '@/components/pathway/Icon';
 import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 import slugify from '@/lib/utils/slugify';
 import { DDATLevel } from '@/types/framework';
-
-import { DDAT_LEVEL_DATA } from '@/components/framework/Chip';
 
 const Home = () => (
     <>
