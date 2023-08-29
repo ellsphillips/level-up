@@ -11,23 +11,16 @@ interface Props {
 }
 
 export default function Card(props: Props) {
-    if (props.thumbnail !== undefined) {
-        const thumbnail = props.thumbnail ? props.thumbnail : 'example';
-    }
-
-    const thumbnailAvailable = props.thumbnail !== undefined;
-
     return (
         <div className='flex md:flex-col md:w-auto lg:max-w-none'>
             <div className='max-w-[40%] md:max-w-none w-full aspect-video'>
                 <Link
                     className='relative flex h-full overflow-hidden transition rounded-lg'
-                    href={thumbnailAvailable ? `/pathways/${props.slug}` : '#'}
+                    href={props.thumbnail ? `/pathways/${props.slug}` : '#'}
                 >
                     <Thumbnail
                         alt={props.title}
                         src={`/img/${props.thumbnail}.jpg`}
-                        unavailable={!thumbnailAvailable}
                     />
                 </Link>
             </div>

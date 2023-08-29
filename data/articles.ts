@@ -1,4 +1,4 @@
-import { Article, Series } from '@/types/article';
+import { Article, Pathway } from '@/types/article';
 
 export const articleData: Article[] = [
     {
@@ -6,7 +6,7 @@ export const articleData: Article[] = [
         date: '2023-05-01',
         title: 'Modern Python development',
         description: 'Setting up a modern Python development environment.',
-        series: Series.ProductionReadyPython,
+        pathway: Pathway.DataEnginerToolkit,
         tags: ['python', 'poetry'],
         thumbnail: 'example',
     },
@@ -22,14 +22,13 @@ export const articleData: Article[] = [
         date: '2023-05-01',
         title: 'Depend on abstraction',
         description: "Leverage Python's type system to decouple code.",
-        series: Series.ProductionReadyPython,
+        pathway: Pathway.DataEnginerToolkit,
         tags: ['python'],
     },
     {
         id: 4,
         date: '2023-05-01',
         title: 'Sveltekit starter pack',
-
         description: 'Quick start guide to initialising a Sveltekit project.',
         tags: ['svelte', 'tailwind', 'typescript', 'vite'],
     },
@@ -45,7 +44,7 @@ export const articleData: Article[] = [
         date: '2023-05-01',
         title: '7 design principles for modern developers',
         description: 'Adopt a modern software development mindset.',
-        series: Series.ProductionReadyPython,
+        pathway: Pathway.DataEnginerToolkit,
         tags: ['productivity'],
     },
     {
@@ -53,7 +52,7 @@ export const articleData: Article[] = [
         date: '2023-05-01',
         title: 'Build interactive maps with Mapbox',
         description: 'Unlock the power of map visualisation with Mapbox.',
-        series: Series.VisualisingMaps,
+        pathway: Pathway.DataScientistLab,
         tags: ['mapbox', 'typescript'],
     },
     {
