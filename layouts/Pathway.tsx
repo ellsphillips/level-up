@@ -17,6 +17,7 @@ interface Props {
     children: ReactNode;
 }
 
+import NewsletterSignup from '@/components/NewsletterSignup';
 import { pathways } from 'config/pathways';
 
 export default function PathwayLayout({
@@ -89,13 +90,19 @@ export default function PathwayLayout({
                     )}
                 </section>
 
-                <section className='flex flex-col gap-8 pt-16 md:flex-row'>
-                    <PathwayTOC
-                        slug={pathwaySlug}
-                        series={articlesInPathway}
-                        className='w-full md:w-1/3'
-                    />
-                    <article className='flex-1 prose text-black dark:text-slate-100 fade-in max-w-none dark:prose-dark'>
+                <section className='flex flex-col gap-8 pt-16 lg:flex-row'>
+                    <aside className='top-0 w-full pt-8 space-y-16 lg:sticky h-min lg:w-1/3 grow'>
+                        <PathwayTOC
+                            slug={pathwaySlug}
+                            series={articlesInPathway}
+                        />
+
+                        <div className='w-full space-y-4'>
+                            <h3>Subscribe to our newsletter to stay updated</h3>
+                            <NewsletterSignup />
+                        </div>
+                    </aside>
+                    <article className='flex-1 w-full pt-8 prose text-black grow dark:text-slate-100 fade-in dark:prose-dark'>
                         {children}
 
                         <div className='py-8 divide-y divide-gray-100 dark:divide-gray-800 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0'>

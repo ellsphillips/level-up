@@ -12,7 +12,7 @@ export default function PathwayTOC(props: PathwayTOCProps) {
     const router = useRouter();
 
     return (
-        <aside className='sticky top-0 h-screen'>
+        <div className='w-full'>
             <a className='text-xl font-medium sm:font-semibold'>
                 {props.series[0]?.name}
             </a>
@@ -46,6 +46,6 @@ export default function PathwayTOC(props: PathwayTOCProps) {
                     );
                 })}
             </div>
-        </aside>
+        </div>
     );
 }
