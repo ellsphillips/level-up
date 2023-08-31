@@ -1,0 +1,96 @@
+---
+title: 'Data Modelling'
+date: '2023-08-31'
+draft: false
+summary: 'Introduce abstraction and data structures to represent the data domain.'
+images: ['/img/example.jpg']
+---
+
+## Abstract Base Classes
+
+Representing a data metric
+
+```python
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import Sequence
+
+import pandas as pd
+
+from atlas.types import GeoType
+
+
+@dataclass  # type: ignore[misc]
+class Metric(ABC):
+    slug: str
+    code: str
+    geotype: GeoType
+    data: pd.DataFrame
+
+    @property
+    def series(self) -> Sequence[float]:
+        return self.data[self.slug].fillna(0).to_list()  # type: ignore
+
+    @abstractmethod
+    def render(self) -> None:
+        pass
+```
+
+Implementing the Facade controller
+
+```python {1-3,4}
+@dataclass
+class Facade:
+    """Facade controller for the library"""
+
+    metrics: list[Metric] = field(init=False, default_factory=load_metrics)
+
+    def generate_map_data(self) -> None:
+        if not self.metrics:
+            raise ValueError("Atlas was unable to find metrics to load.")
+
+        destroy_folder(Paths.TILES_DIR)
+
+        for m in self.metrics:
+            m.render()
+
+    def generate_breaks(self) -> None:
+        store = ContentStore()
+
+        records: dict[str, dict[str, BreaksArray]] = {d.code: {} for d in self.metrics}
+
+        for m in self.metrics:
+            records[m.code][m.geotype.name] = calculate_breaks(store, m)
+
+        with (Path(DATA_DIR) / "breaks.json").open("w", encoding="utf-8") as f:
+            json.dump(records, f, indent=4)
+```
+
+The name of the function is `getStringLength{:.entity.name.function}`.
+
+```tsx showLineNumbers{10}
+import { allPosts } from "contentlayer/generated";
+import { getMDXComponent } from "next-contentlayer/hooks";
+import { format, parseISO } from "date-fns";
+import { Snippet } from "@geist-ui/core";
+
+...
+
+const CodeSnippet = (props: any) => (
+ <Snippet {...props} text={props.text} />
+);
+
+ return (
+    <div>
+      <h1>
+        {post.title}
+      </h1>
+      <p>{format(parseISO(post.date), "LLLL d, yyyy")}</p>
+      <article>
+        <MDXContent components={{ CodeSnippet }} />
+      </article>
+    </div>
+  );
+
+export default PostLayout;
+```
