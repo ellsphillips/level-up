@@ -1,6 +1,17 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['**/*.{js,ts,jsx,tsx}'],
+    darkMode: 'class',
+    content: [
+        './pages/**/*.tsx',
+        './components/**/*.tsx',
+        './layouts/**/*.tsx',
+        './lib/**/*.ts',
+        './data/**/*.mdx',
+    ],
+    safelist: ['dark'],
     theme: {
         extend: {
             screens: {
@@ -10,46 +21,163 @@ module.exports = {
             borderRadius: {
                 DEFAULT: '8px',
             },
-            colors: {
-                'level-up-yellow': '#ffd866',
-                'level-up-orange': '#fc9867',
-                'level-up-background': '#1C1B21',
-                // Greyscale
-                'level-up-black': '#222222',
-                'level-up-grey-100': '#171717',
-                'level-up-grey-85': '#414042',
-                'level-up-grey-75': '#707071',
-                'level-up-grey-55': '#969697',
-                'level-up-grey-35': '#bcbcbd',
-                'level-up-grey-15': '#e2e2e3',
-                'level-up-grey-5': '#f5f5f6',
-                'level-up-off-white': '#fbfbfb',
-                'level-up-white': '#ffffff',
-
-                // Brand
-                'lu-grey-100': '#EEF0F6',
-                'lu-grey-200': '#DADEEC',
-                'lu-grey-300': '#C9D0E3',
-                'lu-grey-400': '#B0BBD5',
-                'lu-grey-500': '#B5BED9',
-                'lu-grey-600': '#A3AED0',
-                'lu-grey-700': '#707eae',
-                'lu-grey-800': '#2D396B',
-                'lu-grey-900': '#1B2559',
-                'lu-cyan-100': '#cffafe',
-                'lu-cyan-200': '#a5f3fc',
-                'lu-cyan-300': '#67e8f9',
-                'lu-cyan-400': '#21d4fd',
-                'lu-cyan-500': '#17c1e8',
-                'lu-cyan-600': '#0891b2',
-                'lu-cyan-700': '#0e7490',
-                'lu-cyan-800': '#155e75',
-                'lu-cyan-900': '#164e63',
+            spacing: {
+                '9/16': '56.25%',
+            },
+            lineHeight: {
+                11: '2.75rem',
+                12: '3rem',
+                13: '3.25rem',
+                14: '3.5rem',
             },
             fontFamily: {
-                sans: ['Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
+                sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                primary: colors.cyan,
+                neutral: colors.slate,
+                'placeholder-light': '#F0F0F0',
+                'placeholder-dark': '#252525',
+            },
+            typography: theme => ({
+                DEFAULT: {
+                    css: {
+                        color: theme('colors.neutral.700'),
+                        a: {
+                            color: theme('colors.primary.500'),
+                            '&:hover': {
+                                color: `${theme(
+                                    'colors.primary.600',
+                                )} !important`,
+                            },
+                            code: { color: theme('colors.primary.400') },
+                        },
+                        h1: {
+                            fontWeight: '700',
+                            letterSpacing: theme('letterSpacing.tight'),
+                            color: theme('colors.neutral.900'),
+                        },
+                        h2: {
+                            fontWeight: '700',
+                            letterSpacing: theme('letterSpacing.tight'),
+                            color: theme('colors.neutral.900'),
+                        },
+                        h3: {
+                            fontWeight: '600',
+                            color: theme('colors.neutral.900'),
+                        },
+                        'h4,h5,h6': {
+                            color: theme('colors.neutral.900'),
+                        },
+                        pre: {
+                            // backgroundColor: theme('colors.neutral.50'),
+                        },
+                        code: {
+                            color: theme('colors.primary.500'),
+                            backgroundColor: theme('colors.neutral.200'),
+                            paddingLeft: '4px',
+                            paddingRight: '4px',
+                            paddingTop: '2px',
+                            paddingBottom: '2px',
+                            borderRadius: '0.25rem',
+                        },
+                        'code::before': {
+                            content: 'none',
+                        },
+                        'code::after': {
+                            content: 'none',
+                        },
+                        details: {
+                            backgroundColor: theme('colors.neutral.100'),
+                            paddingLeft: '4px',
+                            paddingRight: '4px',
+                            paddingTop: '2px',
+                            paddingBottom: '2px',
+                            borderRadius: '0.25rem',
+                        },
+                        hr: { borderColor: theme('colors.neutral.200') },
+                        'ol li::marker': {
+                            fontWeight: '600',
+                            color: theme('colors.neutral.500'),
+                        },
+                        'ul li::marker': {
+                            backgroundColor: theme('colors.neutral.500'),
+                        },
+                        strong: { color: theme('colors.neutral.600') },
+                        blockquote: {
+                            color: theme('colors.neutral.900'),
+                            borderLeftColor: theme('colors.neutral.200'),
+                        },
+                    },
+                },
+                dark: {
+                    css: {
+                        color: theme('colors.neutral.300'),
+                        a: {
+                            color: theme('colors.primary.500'),
+                            '&:hover': {
+                                color: `${theme(
+                                    'colors.primary.400',
+                                )} !important`,
+                            },
+                            code: { color: theme('colors.primary.400') },
+                        },
+                        h1: {
+                            fontWeight: '700',
+                            letterSpacing: theme('letterSpacing.tight'),
+                            color: theme('colors.neutral.100'),
+                        },
+                        h2: {
+                            fontWeight: '700',
+                            letterSpacing: theme('letterSpacing.tight'),
+                            color: theme('colors.neutral.100'),
+                        },
+                        h3: {
+                            fontWeight: '600',
+                            color: theme('colors.neutral.100'),
+                        },
+                        'h4,h5,h6': {
+                            color: theme('colors.neutral.100'),
+                        },
+                        pre: {
+                            backgroundColor: theme('colors.neutral.800'),
+                        },
+                        code: {
+                            backgroundColor: theme('colors.neutral.800'),
+                        },
+                        details: {
+                            backgroundColor: theme('colors.neutral.800'),
+                        },
+                        hr: { borderColor: theme('colors.neutral.700') },
+                        'ol li::marker': {
+                            fontWeight: '600',
+                            color: theme('colors.neutral.400'),
+                        },
+                        'ul li::marker': {
+                            backgroundColor: theme('colors.neutral.400'),
+                        },
+                        strong: { color: theme('colors.neutral.100') },
+                        thead: {
+                            th: {
+                                color: theme('colors.neutral.100'),
+                            },
+                        },
+                        tbody: {
+                            tr: {
+                                borderBottomColor: theme('colors.neutral.700'),
+                            },
+                        },
+                        blockquote: {
+                            color: theme('colors.neutral.100'),
+                            borderLeftColor: theme('colors.neutral.700'),
+                        },
+                    },
+                },
+            }),
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
+    ],
 };

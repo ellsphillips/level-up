@@ -1,0 +1,248 @@
+code[class*='language-'],
+pre[class*='language-'] {
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    color: #eee;
+    font-family: 'Fira Code', monospace;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.5em;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre[class*='language-'],
+:not(pre) > code[class*='language-'] {
+    background: #24242e;
+}
+pre[class*='language-'] {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #414042;
+    overflow: auto;
+}
+
+pre[class*='language-'] {
+    position: relative;
+}
+pre[class*='language-'] code {
+    white-space: pre;
+    display: block;
+}
+
+:not(pre) > code[class*='language-'] {
+    padding: 0.15em 0.2em 0.05em;
+    border-radius: 0.3em;
+    border: 0.13em solid #7a6652;
+    box-shadow: 1px 1px 0.3em -0.1em #000 inset;
+}
+
+code[class*='language-']::-moz-selection,
+pre[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+pre[class*='language-'] ::-moz-selection {
+    background: #363636;
+}
+
+code[class*='language-']::selection,
+pre[class*='language-']::selection,
+code[class*='language-'] ::selection,
+pre[class*='language-'] ::selection {
+    background: #363636;
+}
+
+:not(pre) > code[class*='language-'] {
+    white-space: normal;
+    border-radius: 0.2em;
+    padding: 0.1em;
+}
+
+pre[class*='language-'] {
+    overflow: auto;
+    position: relative;
+    margin: 0.5em 0;
+    padding: 1.25em 1em;
+}
+
+.code-line {
+    color: #444;
+}
+
+.dark .code-line {
+    color: #fff;
+}
+
+.language-css > code,
+.language-sass > code,
+.language-scss > code {
+    color: theme('colors.emerald.500');
+}
+
+.token.attr-value,
+.token.attr-value .punctuation {
+    color: theme('colors.emerald.500');
+}
+
+[class*='language-'] .namespace {
+    opacity: 0.7;
+}
+
+.token.atrule {
+    color: theme('colors.blue.400');
+}
+
+.token.attr-name {
+    color: theme('colors.blue.300');
+}
+
+.token.attr-value {
+    color: theme('colors.violet.400');
+}
+
+.token.attribute {
+    color: theme('colors.violet.400');
+}
+
+.token.boolean {
+    color: theme('colors.cyan.600');
+}
+
+.token.builtin {
+    color: theme('colors.violet.400');
+}
+
+.token.cdata {
+    color: #80cbc4;
+}
+
+.token.char {
+    color: #80cbc4;
+}
+
+.token.class {
+    color: theme('colors.cyan.400');
+}
+
+.token.class-name {
+    color: theme('colors.cyan.400');
+}
+
+.token.comment {
+    color: #aaa;
+}
+
+.token.constant {
+    color: theme('colors.cyan.600');
+}
+
+.token.deleted {
+    color: theme('colors.cyan.400');
+}
+
+.token.doctype {
+    color: #616161;
+}
+
+.token.entity {
+    color: theme('colors.cyan.400');
+}
+
+.token.function {
+    color: theme('colors.violet.400');
+}
+
+.token.hexcode {
+    color: #f2ff00;
+}
+
+.token.id {
+    color: theme('colors.cyan.600');
+    font-weight: bold;
+}
+
+.token.important {
+    color: theme('colors.cyan.600');
+    font-weight: bold;
+}
+
+.token.inserted {
+    color: #80cbc4;
+}
+
+.token.keyword {
+    color: #c586c0;
+}
+
+.token.number {
+    color: theme('colors.emerald.500');
+}
+
+.token.operator {
+    color: #969697;
+}
+
+.token.prolog {
+    color: #616161;
+}
+
+.token.property {
+    color: #80cbc4;
+}
+
+.token.pseudo-class {
+    color: theme('colors.violet.400');
+}
+
+.token.pseudo-element {
+    color: theme('colors.violet.400');
+}
+
+.token.punctuation {
+    color: #bcbcbd;
+}
+
+.token.regex {
+    color: #f2ff00;
+}
+
+.token.selector {
+    color: theme('colors.cyan.400');
+}
+
+.token.string {
+    color: theme('colors.cyan.400');
+}
+
+.token.symbol {
+    color: theme('colors.cyan.600');
+}
+
+.token.tag {
+    color: theme('colors.cyan.400');
+}
+
+.token.unit {
+    color: theme('colors.emerald.500');
+}
+
+.token.url {
+    color: theme('colors.cyan.400');
+}
+
+.token.variable {
+    color: theme('colors.cyan.400');
+}
+
+.token.decorator {
+    color: theme('colors.slate.500');
+}

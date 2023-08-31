@@ -6,7 +6,7 @@ export default function Counter() {
     return (
         <div
             className={
-                'group flex flex-col items-center justify-center space-y-4 transition-colors duration-500 ease-in-out'
+                'group flex flex-col items-center justify-center space-y-4'
             }
         >
             <p className='flex items-center justify-center text-4xl'>{count}</p>

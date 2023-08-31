@@ -1,9 +1,26 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+.fade-in {
+    animation: fade-in ease 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
-@layer base {
-    body {
-        @apply bg-slate-950 text-gray-100;
+html,
+body,
+* + * {
+    transition: background-color 200ms 0s, color 200ms 0s;
+}
+
+h1,
+h2,
+h3 {
+    @apply dark:text-slate-100 text-slate-900;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

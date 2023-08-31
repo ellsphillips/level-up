@@ -1,0 +1,80 @@
+---
+title: 'Testing Essentials'
+date: '2023-08-31'
+draft: false
+summary: "Apply the suite of modern test tooling in Python's ecosystem to guarantee code."
+images: ['/img/example.jpg']
+---
+
+## Automated testing
+
+Testing is a process whereby an application (or codebase) is evaluated against a set of expected outcomes and behaviours. By automating the tests (using code and bespoke tools) we can run, and re-run, a large battery of tests far more quickly than a human can, and with a reduced risk of making errors. The substantial overhead of manually testing code and outputs is replaced by a more moderate overhead of writing test code upfront, whilst developing the application.
+
+## Types of testing
+
+Across the space of software development, there are different types of testing approaches to cover the technical, business and deployment requirements of a large scale application. Examples of testing that are of lesser importance to data focused projects are: integration testing (checking discrete components work together), acceptance testing (validating business requirements are met) and smoke testing (lightweight tests to validate core functionality works).
+
+Data products most commonly make use of unit tests. These are the lowest-level types of tests and focus on individual functions, classes and methods. Each unit test validates a single type of behaviour and cumulatively validate that your overall process performs as expected.
+
+Functional tests are used to validate the data pipelines which comprise multiple individual functions, classes and methods. With the assurance that the individual components are working correctly, a functional test provides the validation that the overall process is correctly formed (e.g., that data of type X is routed correctly through the pipeline).
+
+This guide will focus on unit and functional tests
+
+## What are tests trying to achieve?
+
+The outputs that we produce are utilised in many different ways, some of which may be unexpected or even unknown to us. We need to have a high level of certainty that the data and its structure is correct. A robust testing suite aims to validate that any given, expected, input is correctly processed and handled and that the individual code components operate correctly.
+
+A complete suite will validate your 'happy path(s)'. This covers the range of expected data inputs and the different routes through the pipeline. You will also want to test for some unexpected and edge cases (e.g., what if someone uploads a JSON file instead of a CSV?). It is not necessary to attempt to cover every single possibility out of the gate, instead, the test battery will expand over time as new requirements and issues are identified.
+
+## Test comprehensiveness and repeatability
+
+There is a balance to be struck between writing endless tests and delivering a product/output in a timely manner. There is no golden rule here and will be entirely situation dependent. Testing is often relegated in importance, especially comprehensive testing, as it is time consuming and often much can be validated more quickly by a human - the first time.
+
+The more comprehensive the test suite, the more certainty you can place in your outputs. Whilst eyeballing your code and outputs can be much quicker, it is important to remember that automated tests are repeatable, with very little overhead.
+
+Any project that is likely to iterate (i.e., the code/data will change over time) will require re-testing. It isn't just that automated tests can then be run in a fraction of the time, but also that more comprehensive coverage of the codebase provides the repeated certainty that the entire pipeline works as expected. Consider a pipeline with dozens of functions and how easy it would be for a mistake in one of them to creep in.
+
+Testing is not just for the first iteration of the code, it is the safety barrier for iteration and re-deployment.
+
+## A good unit test
+
+You want to test one thing at once. Most unit tests provide a 'single' input, call a single function, and compare the output against a single expected outcome.
+
+A common occurrence arising from writing unit tests is identifying where your code can be refactored and streamlined (see other modules in this guide). If you find yourself adding more and more layers to a unit test and struggling to get it to hone in on the specific behaviour you want to test, then it's a good sign that your code could be improved.
+
+A basic structure would look like this:
+
+-   Set a fixed input
+-   Set up any dependencies (i.e., a folder that needs to exist)
+-   Call the function being tested
+-   Compare the output to the expected output
+
+## Pytest, unittest and Python
+
+This guide will refer to Python (and provide examples in Python), however the principles apply to other languages as well. The main library for writing tests in Python is Pytest (which is provided as standard), as well as the unittest library.
+
+Pytest provides a framework for defining, running and reporting tests. Once it is configured in your project, you can call it with the command: pytest. It will then look for the identified tests folder and iterate through all the folders, files and functions. Pytest looks for the prefix `test_` or suffix `_test` to tell it that the function is a test. It then runs each test function.
+
+The specific use and outputs of pytest will be discussed as we progress through the rest of this guide.
+
+## Code example
+
+```python
+def calculate_percentage(num: int, den: int) -> float:
+    return num / den
+```
+
+This is a simple function to calculate a percentage given a numerator and denominator. To test this function, we can give it a fixed input and check that the returned value is the one we expect. Such a test would look like this:
+
+```python
+def test_calculate_percentage() -> None:
+    assert calculate_percentage(10, 5) == 2
+```
+
+Here we give it `10` to divide by `5` and assert that the output will be `2`. If the test runs and the output is 2, then the test passes. Otherwise it fails. We now have some certainty that this function operates as we expect.
+
+This is an example of a 'happy' path test - `10` and `5` are expected values. But what if the inputs are floats, or strings, or the denominator is larger than the numerator, or one of them is blank? These are unexpected or edge cases you may wish to test - and if the result is not the one you want, then you may need to alter or add functionality to your pipeline/function (e.g., converting strings to integers).
+
+There are ways to use pytest to iterate over multiple test cases, which will be discussed later.
+
+## Coverage

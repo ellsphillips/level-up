@@ -1,6 +1,7 @@
-export enum Series {
-    ProductionReadyPython = 'Production-ready Python',
-    VisualisingMaps = 'Visualising Maps',
+export enum Pathway {
+    SoftwareDeveloperMindset = 'Software Developer Mindset',
+    DataEnginerToolkit = 'Data Engineer Toolkit',
+    DataScientistLab = 'Data Scientist Lab',
 }
 
 export type Article = {
@@ -8,7 +9,7 @@ export type Article = {
     date: string;
     title: string;
     description: string;
-    series?: Series;
+    pathway?: Pathway;
     tags: string[];
     thumbnail?: string;
 };
@@ -17,3 +18,22 @@ export interface Tag {
     name: string;
     count: number;
 }
+
+export type FrontMatter = {
+    layout?: string;
+    title: string;
+    summary: string;
+    date: string;
+    tags: string[];
+    pathway?: string;
+    slug: string;
+    images?: string[];
+    readingTime: any;
+    fileName: string;
+};
+
+export type Author = {
+    name: string;
+    avatar: string;
+    role: string;
+};
