@@ -2,7 +2,6 @@ export default function NewsletterSignup() {
     return (
         <form
             method='POST'
-            action='https://app.convertkit.com/forms/3655371/subscriptions'
             className='max-w-md '
         >
             <label
