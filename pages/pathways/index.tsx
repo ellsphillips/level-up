@@ -2,6 +2,7 @@ import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 import Head from 'next/head';
 
+import Link from '@/components/Link';
 import Card from '@/components/pathway/Card';
 import PathwayIcon, { PathwayID } from '@/components/pathway/Icon';
 import { getAllFilesFrontMatter } from '@/lib/mdx';
@@ -52,16 +53,19 @@ export default function Pathway({
                 <div className='divide-y-2 divide-slate-700/25'>
                     {pathwayInfo.map(pathway => (
                         <section className='py-16 mx-auto space-y-8 max-w-7xl'>
-                            <div className='flex items-center h-12 space-x-4'>
-                                <span className='w-6 h-6'>
-                                    <PathwayIcon
-                                        pathway={pathway.slug as PathwayID}
-                                    />
-                                </span>
-                                <h2 className='text-2xl font-bold text-slate-800 dark:text-slate-100'>
-                                    {pathway.title}
-                                </h2>
-                            </div>
+                            <h2 className='text-2xl font-bold text-slate-800 dark:text-slate-100'>
+                                <Link
+                                    href={`/pathways/${pathway.slug}`}
+                                    className='flex items-center h-12 space-x-4 no-underline transition-colors hover:text-primary-500'
+                                >
+                                    <span className='w-6 h-full'>
+                                        <PathwayIcon
+                                            pathway={pathway.slug as PathwayID}
+                                        />
+                                    </span>
+                                    <span>{pathway.title}</span>
+                                </Link>
+                            </h2>
                             <div className='grid gap-8 lg:grid-cols-3'>
                                 {pathway.articles.map((article, i) => (
                                     <Card

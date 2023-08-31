@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 interface PathwayTOCProps extends React.HTMLAttributes<HTMLElement> {
     slug: string;
+    pathway: string;
     series: PathwayContent[];
     children?: React.ReactNode;
 }
@@ -12,9 +13,9 @@ export default function PathwayTOC(props: PathwayTOCProps) {
     const router = useRouter();
 
     return (
-        <aside className='sticky top-0 h-screen'>
+        <div className='w-full'>
             <a className='text-xl font-medium sm:font-semibold'>
-                {props.series[0]?.name}
+                {props.pathway}
             </a>
             <p className='mt-1 text-sm text-gray-500 sm:text-base'>
                 {props.series.length} lessons · 24 minute read
@@ -28,16 +29,20 @@ export default function PathwayTOC(props: PathwayTOCProps) {
                             className='flex items-center justify-between'
                         >
                             <div
-                                className={`flex duration-200 items-center w-full px-4 py-2 text-sm rounded hover:bg-neutral-200 dark:hover:bg-slate-700 hover:cursor-pointer ${
+                                className={`flex justify-between duration-200 items-center w-full px-4 py-2 text-sm rounded hover:bg-neutral-200 dark:hover:bg-slate-700 hover:cursor-pointer ${
                                     router.asPath.split('/').pop() ===
                                         article.slug &&
                                     'bg-neutral-100 dark:bg-slate-800'
                                 }`}
                             >
-                                <span className='text-gray-500'>{i + 1}</span>
-                                <p className='flex-1 ml-4  max-w-[12rem] truncate'>
-                                    {article.name}
-                                </p>
+                                <div className='flex items-center'>
+                                    <span className='text-gray-500'>
+                                        {i + 1}
+                                    </span>
+                                    <p className='flex-1 ml-4  max-w-[12rem] truncate'>
+                                        {article.name}
+                                    </p>
+                                </div>
                                 <span className='ml-2 text-gray-500'>
                                     8 mins
                                 </span>
@@ -46,6 +51,6 @@ export default function PathwayTOC(props: PathwayTOCProps) {
                     );
                 })}
             </div>
-        </aside>
+        </div>
     );
 }

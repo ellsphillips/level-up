@@ -3,7 +3,7 @@ export default function NewsletterSignup() {
         <form
             method='POST'
             action='https://app.convertkit.com/forms/3655371/subscriptions'
-            className='lg:max-w-[390px]'
+            className='max-w-md '
         >
             <label
                 htmlFor='email'
@@ -11,7 +11,7 @@ export default function NewsletterSignup() {
             >
                 Email address
             </label>
-            <div className='flex mt-1 rounded-md shadow-sm'>
+            <div className='flex w-full mt-1 rounded-md shadow-sm'>
                 <div className='relative flex items-stretch flex-grow focus-within:z-10'>
                     <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
                         <svg

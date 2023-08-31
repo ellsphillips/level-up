@@ -1,5 +1,5 @@
 import Logo from '@/components/Logo';
-import ThemeToggle from '@/components/theme/themeToggle';
+import ThemeToggle from '@/components/theme/ThemeSwitch';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 

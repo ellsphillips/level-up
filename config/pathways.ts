@@ -100,7 +100,15 @@ export const pathways: Pathway[] = [
                 content: [
                     {
                         name: 'Modern Environment',
-                        slug: 'modern-environment',
+                        slug: 'modern-python-environment',
+                    },
+                    {
+                        name: 'Data Modelling',
+                        slug: 'data-modelling',
+                    },
+                    {
+                        name: 'Testing Essentials',
+                        slug: 'testing-essentials',
                     },
                 ],
             },

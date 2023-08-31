@@ -1,0 +1,128 @@
+{
+    "data-engineer-toolkit": [
+        {
+            "title": "Communicating between the technical and non-technical",
+            "description": "You can communicate effectively across organisational, technical and political boundaries, understanding the context. You can make complex and technical information and language simple and accessible for non-technical audiences. You can advocate on behalf of a team and communicate what it does, to create trust and authenticity. You can successfully respond to challenges"
+        },
+        {
+            "title": "Data analysis and synthesis",
+            "description": "You can translate data into valuable insights that inform decisions. You can effectively involve teams in analytics and synthesis to increase consensus and challenge assumptions. You can identify and use the most appropriate analytical techniques, and you have an understanding of analytical tools. You can demonstrate numeracy. You can show an awareness of advances in digital analytics tools and data manipulation products, and can keep up to date with them. You can collect, collate, cleanse, synthesise and interpret data to derive meaningful and actionable insights."
+        },
+        {
+            "title": "Data development process",
+            "description": "You can integrate and separate data feeds to map, produce, transform and test new data products."
+        },
+        {
+            "title": "Data innovation",
+            "description": "You can explore new, more efficient and effective ways of deriving value from data. You can optimise and design data to support business opportunities."
+        },
+        {
+            "title": "Data integration design",
+            "description": "You can develop data services that are fit for purpose, resilient, scalable and future-proof, to meet user needs. You can demonstrate an understanding of how to expose data from systems (for example, through APIs), link data from multiple systems and deliver streaming services."
+        },
+        {
+            "title": "Data modelling",
+            "description": "You can produce data models and understand where to use different types. You can understand different tools and compare different data models. You can reverse-engineer a data model from a live system. You can understand industry-recognised data modelling patterns and standards."
+        },
+        {
+            "title": "Metadata management",
+            "description": "You can understand metadata management and the tool options to support its delivery. You can design and maintain the appropriate metadata repositories to enable the organisation to understand its data assets."
+        },
+        {
+            "title": "Problem resolution (data)",
+            "description": "You can log, analyse and manage problems to identify and implement the appropriate solution. You can ensure that the problem is fixed."
+        },
+        {
+            "title": "Programming and build (data engineering)",
+            "description": "You can design, write and iterate code from prototype to production-ready. You can understand security, accessibility and version control. You can use a range of coding tools and languages."
+        },
+        {
+            "title": "Technical understanding",
+            "description": "You can demonstrate knowledge of the specific technologies necessary to fulfil the responsibilities and tasks of the role. You can apply the required breadth and depth of technical knowledge. You can actively keep informed of industry developments to make cost-effective use of new and emerging tools and technologies."
+        },
+        {
+            "title": "Testing",
+            "description": "You can plan, design, manage, execute and report tests, using appropriate tools and techniques. You can work within regulations. You can ensure that risks associated with deployment are adequately understood and documented."
+        }
+    ],
+    "data-scientist-lab": [
+        {
+            "title": "Applied maths, statistics and scientific practices",
+            "description": "You can apply analytical methods including exploratory data analysis, visualisation and statistical testing to reach accurate conclusions. You can use analytical approaches to interpret data confidently. You can summarise and describe data to support decision making."
+        },
+        {
+            "title": "Data engineering and manipulation",
+            "description": "You can select and use the most appropriate tools and techniques to manipulate and transform the data for data science products. You can collaborate with data engineers."
+        },
+        {
+            "title": "Data science innovation",
+            "description": "You can apply data science innovation in your approach to new questions, opportunities, data and techniques by using an inquisitive mind. You can improve methods and maximise insights. You can apply your data science innovation to produce creative solutions to data science problems."
+        },
+        {
+            "title": "Delivering business impact",
+            "description": "You can understand processes, data and strategic priorities. You can apply data science techniques to produce and present data science products. You can design solutions that meet user needs, allowing for design and ethics standards. You can work towards the successful delivery of products and establish maintenance requirements."
+        },
+        {
+            "title": "Developing data science capability",
+            "description": "You can work with data scientists and developers to share skills. You can ensure that your team can access the right technologies to create products. You can develop your data science skills. You can routinely engage with and update your continuous professional development (CPD)."
+        },
+        {
+            "title": "Ethics and privacy (data science)",
+            "description": "You can understand and comply with frameworks, standards and laws, including General Data Protection Regulation (GDPR), the Data Protection Act (DPA) and the Equalities Act. You can work with legal, policy and public colleagues, government departments and ministers to clearly communicate ethical issues and ideas. You can store and treat data appropriately."
+        },
+        {
+            "title": "Programming and build (data science)",
+            "description": "You can use programming tools to undertake analysis and create scalable data products. You can identify and reuse common approaches and code. You can document and test code to ensure its quality. You can understand the organisation's tech stack and get code into production by working with developers and architects."
+        },
+        {
+            "title": "Understanding product delivery",
+            "description": "You can use different product delivery methods (such as Agile) and phases to make decisions. You can work collaboratively with other professionals. You can use knowledge of product management to deploy data science products into the organisation. You can show data science is used effectively to support products and services."
+        }
+    ],
+    "software-developer-mindset": [
+        {
+            "title": "Availability and capacity management",
+            "description": "You can define, analyse, plan, forecast, measure, maintain and improve all aspects of the availability of services, including power. You can control and manage service availability to meet business needs cost-effectively, including managing the capability, functionality and sustainability of service components (such as hardware, software, network resources, and software or infrastructure as a service)."
+        },
+        {
+            "title": "Development process optimisation",
+            "description": "You can identify opportunities for improving the development process, make these improvements and evaluate their success. You can work with others to select and implement tools and practices to build confidence and reduce risk in each stage of the software development life cycle (from planning and prioritisation through to build, test, deployment and monitoring)."
+        },
+        {
+            "title": "Development process optimisation (management)",
+            "description": "You can create strategies for optimising the development process. You can influence and build consensus with stakeholders to ensure that the required technical improvements are aligned with business objectives. You can iterate on the development of standards and policies, working with delivery teams to ensure that these policies are producing the required outcome and continue to be attainable, applicable and fit for purpose."
+        },
+        {
+            "title": "Information security",
+            "description": "You can maintain the security, confidentiality and integrity of information systems through compliance with relevant legislation and regulations. You can design, implement and operate controls and management strategies to allow this."
+        },
+        {
+            "title": "Modern standards approach",
+            "description": "You can apply a modern standards approach throughout automation and testing."
+        },
+        {
+            "title": "Programming and build (software engineering)",
+            "description": "You can use agreed security standards and specifications to design, create, test and document new or amended software."
+        },
+        {
+            "title": "Prototyping",
+            "description": "You can apply technical knowledge and experience to create or design workable prototypes, both programs and physical outputs. You can understand parameters, restrictions and synergies."
+        },
+        {
+            "title": "Service support",
+            "description": "You can maintain and support services."
+        },
+        {
+            "title": "Systems design",
+            "description": "You can create the specification and design of systems to meet defined business needs. You can work with business and technology stakeholders to translate business problems into technical designs. You can visualise the ideal user service and come up with design ideas and possible design approaches. You can effectively explore different approaches to solving problems."
+        },
+        {
+            "title": "Systems integration",
+            "description": "You can identify integration points between systems and processes, designing data contracts and communication between the components. You can make use of modern design patterns that reduce risk and complexity where possible. You can perform integration tests as part of the development process, drawing on suitable testing frameworks and methodologies."
+        },
+        {
+            "title": "User focus",
+            "description": "You can understand users and identify who they are and what their needs are, based on evidence. You can translate user stories and propose design approaches or services to meet these needs. You can engage in meaningful interactions and relationships with users. You can show that you put users first and can manage competing priorities."
+        }
+    ]
+}
