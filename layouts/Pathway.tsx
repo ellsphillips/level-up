@@ -1,4 +1,5 @@
 import Link from '@/components/Link';
+import NewsletterSignup from '@/components/NewsletterSignup';
 import Counter from '@/components/demo/Counter';
 import NextPeviousPage from '@/components/pathway/NextPeviousPage';
 import PathwayTOC from '@/components/pathway/PathwayTOC';
@@ -6,9 +7,11 @@ import Footer from '@/components/theme/Footer';
 import Nav from '@/components/theme/Nav';
 import Section from '@/components/theme/Section';
 import { FrontMatter } from '@/types/article';
+import config from 'config';
+import { pathways } from 'config/pathways';
 import Head from 'next/head';
 import { ReactNode } from 'react';
-import { BsDot } from 'react-icons/bs';
+import { BsDot, BsDownload, BsGithub } from 'react-icons/bs';
 
 interface Props {
     frontMatter: FrontMatter;
@@ -16,9 +19,6 @@ interface Props {
     prev?: { slug: string; title: string };
     children: ReactNode;
 }
-
-import NewsletterSignup from '@/components/NewsletterSignup';
-import { pathways } from 'config/pathways';
 
 export default function PathwayLayout({
     frontMatter,
@@ -90,19 +90,38 @@ export default function PathwayLayout({
                     )}
                 </section>
 
-                <section className='flex flex-col gap-8 pt-16 lg:flex-row'>
-                    <aside className='top-0 w-full pt-8 space-y-16 lg:sticky h-min lg:w-1/3 grow'>
+                <section className='flex flex-col gap-8 pt-16 font-semibold lg:flex-row'>
+                    <aside className='top-0 w-full pt-8 space-y-16 lg:sticky h-min lg:w-[40%] grow'>
                         <PathwayTOC
                             slug={pathwaySlug}
                             series={articlesInPathway}
                         />
 
-                        <div className='w-full space-y-4'>
-                            <h3>Subscribe to our newsletter to stay updated</h3>
+                        <div className='space-y-4 transition-all'>
+                            <Link
+                                href={config.repo}
+                                className='flex items-center space-x-2 cursor-pointer max-w-fit text-neutral-700 hover:text-primary-500 dark:text-neutral-400'
+                            >
+                                <BsGithub className='transition-colors' />
+                                <span className='text-sm'>View source</span>
+                            </Link>
+                            <Link
+                                href={config.repo}
+                                className='flex items-center space-x-2 cursor-pointer max-w-fit text-neutral-700 hover:text-primary-500 dark:text-neutral-400'
+                            >
+                                <BsDownload strokeWidth={1} />
+                                <span className='text-sm'>Download</span>
+                            </Link>
+                        </div>
+
+                        <div className='hidden w-full space-y-4 lg:block'>
+                            <h3 className='text-neutral-700'>
+                                Subscribe to our newsletter to stay updated
+                            </h3>
                             <NewsletterSignup />
                         </div>
                     </aside>
-                    <article className='flex-1 w-full pt-8 prose text-black grow dark:text-slate-100 fade-in dark:prose-dark'>
+                    <article className='flex-1 w-full pt-8 prose text-black max-w-none lg:max-w-prose grow dark:text-slate-100 fade-in dark:prose-dark'>
                         {children}
 
                         <div className='py-8 divide-y divide-gray-100 dark:divide-gray-800 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0'>
@@ -112,6 +131,13 @@ export default function PathwayLayout({
                             </div>
                         </div>
                     </article>
+
+                    <div className='w-full space-y-4 lg:hidden'>
+                        <h3 className='text-neutral-700'>
+                            Subscribe to our newsletter to stay updated
+                        </h3>
+                        <NewsletterSignup />
+                    </div>
                 </section>
                 <Footer />
             </main>
