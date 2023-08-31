@@ -94,6 +94,14 @@ export default function PathwayLayout({
                     <aside className='top-0 w-full pt-8 space-y-16 lg:sticky h-min lg:w-[40%] grow'>
                         <PathwayTOC
                             slug={pathwaySlug}
+                            pathway={pathwaySlug
+                                .split('-')
+                                .map(
+                                    word =>
+                                        word.charAt(0).toUpperCase() +
+                                        word.substring(1),
+                                )
+                                .join(' ')}
                             series={articlesInPathway}
                         />
 

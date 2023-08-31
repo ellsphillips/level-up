@@ -29,8 +29,7 @@ const Home = () => (
                     </h1>
                     <p className='text-2xl'>
                         Coordinating Government-wide technical learning <br />{' '}
-                        to accelerate learning and bridge the gap between <br />
-                        junior and senior roles
+                        to bridge the gap between junior and senior roles
                     </p>
                 </div>
             </Section>
@@ -61,7 +60,7 @@ const Home = () => (
                 ))}
             </Section>
 
-            <Section className='space-y-8 lg:-top-16'>
+            <Section className='space-y-8'>
                 <h2 className='text-3xl font-bold'>New pathway launched!</h2>
 
                 <div>

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 interface PathwayTOCProps extends React.HTMLAttributes<HTMLElement> {
     slug: string;
+    pathway: string;
     series: PathwayContent[];
     children?: React.ReactNode;
 }
@@ -14,7 +15,7 @@ export default function PathwayTOC(props: PathwayTOCProps) {
     return (
         <div className='w-full'>
             <a className='text-xl font-medium sm:font-semibold'>
-                {props.series[0]?.name}
+                {props.pathway}
             </a>
             <p className='mt-1 text-sm text-gray-500 sm:text-base'>
                 {props.series.length} lessons · 24 minute read
